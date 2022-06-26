@@ -32,6 +32,8 @@ import TelephoneIcon from './telephone-icon.svg'
 import TimeIcon from './time-icon.svg'
 import UplaodIcon from './upload-icon.svg'
 import WorldIcon from './world-icon.svg'
+import Hide from './hide-icon.svg'
+import SearchIcon from './search-icon.svg'
 
 export {
     AboutIcon,
@@ -64,8 +66,10 @@ export {
     RightIcon,
     SendMessageIcon,
     SettingIcon,
+    SearchIcon,
     TelephoneIcon,
     TimeIcon,
     UplaodIcon,
-    WorldIcon
+    WorldIcon,
+    Hide
 }

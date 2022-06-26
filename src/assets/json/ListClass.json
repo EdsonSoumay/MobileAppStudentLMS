@@ -1,0 +1,34 @@
+{
+    "comments": [],
+    "profile": {
+      "name": "typicode"
+    },
+    "ListClass": [
+      {
+        "id": "1",
+        "MK": "Data Struct",
+        "paralel": "B",
+        "Schedule": "Senin - Rabu, 14:40 - 16:00",
+        "image" : "../../assets/ilustrations/class1-ilustration.png",
+        "color" : "#FC9393"
+      },
+      {
+        "id": "2",
+        "MK": "Computer Security",
+        "paralel": "A",
+        "Schedule": "Senin - Rabu, 09:40 - 16:00",
+        "image" : "../../assets/ilustrations/class2-ilustration.png",
+        "color" : "#6ED295"
+
+      },
+      {
+        "id": "1",
+        "MK": "Mobile Programming",
+        "paralel": "B",
+        "Schedule": "Selasa - Kamis, 14:40 - 16:00",
+        "image" : "../../assets/ilustrations/class3-ilustration.png",
+        "color" : "#45C1C0"
+      }
+      
+    ]
+}
