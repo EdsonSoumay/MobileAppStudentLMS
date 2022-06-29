@@ -1,59 +1,55 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity, TextInput, ScrollView } from 'react-native'
 import React from 'react'
 import { BellIcon, Class1Ilustration, Class2Ilustration,Class3Ilustration , Images1, SearchIcon, SettingIcon } from '../../assets'
 import { Gap } from '../../components'
 import ListClass from '../../assets/json/ListClass.json';
-
+import {Button} from '../../components';
 
 
 const HomePage = () => {
     const path = '../../assets/ilustrations/class2-ilustration.png'
 
   return (
-    <View style={{backgroundColor:"#FFFF"}}>
+    <>
         <View style={styles.header}>
-        <Gap height={60}/>
-        <View style={styles.headerContent}>
-        <Gap width="2%"/>
-                {/* profile */}
-                <View>
-                    <Image
-                        source={Images1}
-                        style={styles.tinyLogo}
-                     />
+            <Gap height={60}/>
+            <View style={styles.headerContent}>
+                    {/* <Gap width="2%"/> */}
+                    <TouchableOpacity>
+                        <Image
+                            source={Images1}
+                            style={styles.tinyLogo}
+                            />
+                    </TouchableOpacity>
+                    <Gap width={15}/>
+                    <TouchableOpacity>
+                        <Text style={{fontFamily:'OpenSans-SemiBold', fontSize:22, color:'#FFFFFF'}}>Halo,  Josh</Text>
+                    </TouchableOpacity>
+                <Gap width="40%"/>
+                <View style={{flexDirection:'row', maxWidth:100, alignItems:'flex-end', justifyContent:'space-between'}}>
+                    <TouchableOpacity style={styles.notificationAndSettingIcon}>
+                        <BellIcon
+                            height= "80%"
+                            width= "80%"
+                        />
+                        <View
+                            style={{width:10, height:10, backgroundColor:'#F76E11', borderRadius:10, borderWidth:0, position:'absolute', top:-3, right:-3, justifyContent:'center', alignItems:'center'}}>
+                        </View>
+                    </TouchableOpacity>
+                   <Gap width={25}/>
+                    <TouchableOpacity style={styles.notificationAndSettingIcon}>
+                        <SettingIcon
+                            height= "80%"
+                            width= "80%"
+                        />
+                    </TouchableOpacity>
+                <Gap width='2%'/>
                 </View>
-                <Gap width={15}/>
-                <View>
-                    <Text style={{fontFamily:'OpenSans-SemiBold', fontSize:22, color:'#FFFFFF'}}>Halo,  Josh</Text>
-                </View>
-                {/* profile */}
-            <Gap width="40%"/>
-            <View style={{flexDirection:'row', alignItems:'flex-end', justifyContent:'space-around', width:80}}>
-                <View style={styles.notificationAndSettingIcon}>
-                    <BellIcon
-                        height= "80%"
-                        width= "80%"
-                    />
-                     <View
-                        style={{width:10, height:10, backgroundColor:'#F76E11', borderRadius:10, borderWidth:0, position:'absolute', top:-3, right:-3, justifyContent:'center', alignItems:'center'}}>
-                    </View>
-                </View>
-              <Gap width={10}/>
-                <View style={styles.notificationAndSettingIcon}>
-                    <SettingIcon
-                        height= "80%"
-                        width= "80%"
-                    />
-                </View>
-              <Gap width='2%'/>
             </View>
-         </View>
        </View>
-       <View style={styles.bodyContent}>
 
-       <View style={styles.texInput}>
-            <TextInput/>
-       </View>
+        <View style={{flex: 1, backgroundColor:'#F6F6F6'}}>
+        {/* <Gap height={47}/> */}
        <View style={styles.searchSection}>
             <TextInput
                 style={styles.input}
@@ -63,24 +59,22 @@ const HomePage = () => {
             />
             <SearchIcon style={styles.searchIcon} />
         </View>
-      <Gap height={50}/>
+
+      {/* <Gap height={50}/> */}
+
+      
+        <ScrollView style={styles.bodyContent}>
             {
-                ListClass.ListClass.map((data, i)=>{
-                    
-                        console.log("data image:",data.image)
-                        
+                ListClass.ListClass.map((data, i)=>{    
                     return(
-                        <View style={[styles.classCard, {backgroundColor:data.color}]} 
+                    <TouchableOpacity style={[styles.classCard, {backgroundColor:data.color}]} 
                         key={`index:${i}`}
+                        // onPress={()=>alert()}
                         >
                         <View style={{flexDirection:'row', justifyContent:'space-around'}}>
 
                             <View style={{justifyContent:'center', alignItems:'center'}}>
                                 <Class1Ilustration style={{ marginleft:13, marginVertical:22,}}  />
-                                {/* <Image
-                                source={require(`${data.image}`)}
-                                style={styles.tinyLogo}
-                            /> */}
                             </View>
 
                             <View style={{ flexDirection:'column', marginVertical:22, marginleft:13,}}>
@@ -96,27 +90,54 @@ const HomePage = () => {
                                     </View>
                             </View>
                         </View>
-                    </View>
+                    </TouchableOpacity>
                     )
                 })
             }
-      </View>
-    </View>
+            </ScrollView>
+
+            <TouchableOpacity style={styles.addClassContainer}>
+                <View style={styles.addClassSubContainer}>
+                    <Text style={{color:'#FFFFFF', fontSize:35}}>+</Text>
+                </View>
+            </TouchableOpacity>
+            </View>
+        
+     </>
   )
 }
 
 export default HomePage
 
 const styles = StyleSheet.create({
+    addClassContainer:{
+        height: 67, 
+        width: 67, 
+        borderRadius: 67/2, 
+        backgroundColor:'#FFFF',
+        position:'absolute', 
+        top: '75%', 
+        right: 29,
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    addClassSubContainer:{
+        height: 60, 
+        width: 60, 
+        borderRadius: 60/2, 
+        backgroundColor:'#356CB1',
+        justifyContent:'center',
+        alignItems:'center'
+    },
     bodyContent:{
-        marginHorizontal:15
+        marginHorizontal:15,
+        // flex: 1
+        marginTop: 0,
+        backgroundColor:'#fffff'
     },
 
     classCard:{
         height:138,
-        // backgroundColor:'#FC9393',
-        // alignItems:'center',
-        // justifyContent:'center',
         width:'100%',
         borderRadius:14,
         marginBottom:15
@@ -128,9 +149,10 @@ const styles = StyleSheet.create({
     },
     headerContent:{
         flexDirection:'row',
-        justifyContent:'space-between',
-        // justifyContent:,
+        justifyContent: 'space-evenly',
         alignItems:'center',
+        // backgroundColor:'lightgreen',
+        marginHorizontal:15        
     },
     tinyLogo: {
         width: 38,
@@ -151,15 +173,17 @@ const styles = StyleSheet.create({
       
       },
       searchSection: {
-        flex: 1,
+        marginHorizontal:15,
+        marginTop: 47,
+        // flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        // marginHorizontal: 15
+        marginBottom: 30,
     },
     searchIcon: {
         padding: 10,
-        position:'absolute', top:-10, right:15
+        position:'absolute', top:13, right:15
         
     },
     input: {
@@ -177,3 +201,4 @@ const styles = StyleSheet.create({
 
     },
 })
+

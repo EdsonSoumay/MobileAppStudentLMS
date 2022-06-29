@@ -22,12 +22,44 @@
 
       },
       {
-        "id": "1",
+        "id": "3",
         "MK": "Mobile Programming",
         "paralel": "B",
         "Schedule": "Selasa - Kamis, 14:40 - 16:00",
         "image" : "../../assets/ilustrations/class3-ilustration.png",
-        "color" : "#45C1C0"
+        "color" : "#145C33"
+      },
+      {
+        "id": "4",
+        "MK": "Management Science",
+        "paralel": "C",
+        "Schedule": "Selasa - Kamis, 14:40 - 16:00",
+        "image" : "../../assets/ilustrations/class3-ilustration.png",
+        "color" : "#45Cd10"
+      },
+      {
+        "id": "5",
+        "MK": "Project Management",
+        "paralel": "B",
+        "Schedule": "Selasa - Kamis, 14:40 - 16:00",
+        "image" : "../../assets/ilustrations/class3-ilustration.png",
+        "color" : "#344824"
+      },
+      {
+        "id": "6",
+        "MK": "Web Programming",
+        "paralel": "B",
+        "Schedule": "Selasa - Kamis, 14:40 - 16:00",
+        "image" : "../../assets/ilustrations/class3-ilustration.png",
+        "color" : "#125C44"
+      },
+      {
+        "id": "7",
+        "MK": "backend dev",
+        "paralel": "B",
+        "Schedule": "Selasa - Kamis, 14:40 - 16:00",
+        "image" : "../../assets/ilustrations/class3-ilustration.png",
+        "color" : "#595C20"
       }
       
     ]
