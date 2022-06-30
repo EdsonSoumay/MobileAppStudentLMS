@@ -4,7 +4,7 @@ import { BellIcon, Class1Ilustration, Class2Ilustration,Class3Ilustration , Clos
 import { Gap } from '../../components'
 import ListClass from '../../assets/json/ListClass.json';
 
-const ModalPoup = ({visible, children}) => {
+const AddClass = ({visible, children}) => {
     const [showModal, setShowModal] = React.useState(visible);
     const scaleValue = React.useRef(new Animated.Value(0)).current;
     React.useEffect(() => {
@@ -39,11 +39,47 @@ const ModalPoup = ({visible, children}) => {
     );
   };
 
+const Notification = ({visible, children}) => {
+    const [showModal, setShowModal] = React.useState(visible);
+    const scaleValue = React.useRef(new Animated.Value(0)).current;
+    React.useEffect(() => {
+      toggleModal();
+    }, [visible]);
+    const toggleModal = () => {
+      if (visible) {
+        setShowModal(true);
+        Animated.spring(scaleValue, {
+          toValue: 1,
+          duration: 300,
+          useNativeDriver: true,
+        }).start();
+      } else {
+        setTimeout(() => setShowModal(false), 200);
+        Animated.timing(scaleValue, {
+          toValue: 0,
+          duration: 300,
+          useNativeDriver: true,
+        }).start();
+      }
+    };
+    return (
+      <Modal transparent visible={showModal}>
+        <View style={styles.modalBackGround}>
+          <Animated.View 
+            style={[styles.modalContainerNotification, {transform: [{scale: scaleValue}]}]}>
+            {children}
+          </Animated.View>
+        </View>
+      </Modal>
+    );
+  };
+
 
 
 const HomePage = () => {
     const path = '../../assets/ilustrations/class2-ilustration.png'
     const [visible, setVisible] = React.useState(false);
+    const [NotificationVisible, setNotificationVisible] = React.useState(false);
 
 
   return (
@@ -64,7 +100,9 @@ const HomePage = () => {
                     </TouchableOpacity>
                 <Gap width="40%"/>
                 <View style={{flexDirection:'row', maxWidth:100, alignItems:'flex-end', justifyContent:'space-between'}}>
-                    <TouchableOpacity style={styles.notificationAndSettingIcon}>
+                    <TouchableOpacity 
+                    onPress={() => setNotificationVisible(true)}
+                    style={styles.notificationAndSettingIcon}>
                         <BellIcon
                             height= "80%"
                             width= "80%"
@@ -130,9 +168,8 @@ const HomePage = () => {
             }
             </ScrollView>
 
-            {/* Modal */}
-            <ModalPoup visible={visible}>
-
+            {/* Add Class Modal */}
+            <AddClass visible={visible}>
                  <View>
                    <View style={styles.headerPopUp}>
                      <TouchableOpacity onPress={() => setVisible(false)}>
@@ -154,8 +191,107 @@ const HomePage = () => {
                       </TouchableOpacity>
                    </View>
                  </View>
-            </ModalPoup>
-            {/* Modal */}
+            </AddClass>
+            {/*Add Class Modal */}
+
+            {/* Add Notification Modal */}
+            <Notification visible={NotificationVisible}>
+                 <View style={{marginHorizontal:15}}>
+                  <View style={styles.headerPopUp}>
+                     <TouchableOpacity onPress={() => setNotificationVisible(false)}>
+                          <CloseIcon width={12} height={12}/>
+                     </TouchableOpacity>
+                  </View>
+                  <Gap height={12}/>
+                  <View style={{flexDirection:'row', justifyContent:'space-between'}}>
+                    <View>
+                      <Text style={{fontFamily:'OpenSans-SemiBold', fontSize:20, color:'#000000'}}>Notifications</Text>
+                    </View>
+                    <View>
+                      <Text style={{fontFamily:'Poppins-Medium', fontSize:11}}>mark all as read</Text>
+                    </View>
+                  </View>
+                  <Gap height={29}/>
+                  <View style={styles.notificationCategoryContainer}>
+                    <View style={styles.categoryNotication}>
+                    <View style={styles.categoryName}>
+                        <Text style={[styles.categoryTextName, {color:'#000000'}]}>All</Text>
+                      </View>
+                      <View style={[styles.categoryCount,{backgroundColor:'#000000'}] }>
+                        <Text style={styles.categoryCountText}>3</Text>
+                      </View>
+                    </View>
+                    <View style={styles.categoryNotication}>
+                      <View style={styles.categoryName}>
+                        <Text style={styles.categoryTextName}>Class</Text>
+                      </View>
+                    <View style={[styles.categoryCount,{backgroundColor:'#C4C4C4'}] }>
+                        <Text style={styles.categoryCountText}>2</Text>
+                      </View>
+                    </View>
+                    <View style={styles.categoryNotication}>
+                    <View style={styles.categoryName}>
+                        <Text style={styles.categoryTextName}>Academic</Text>
+                      </View>
+                    <View style={[styles.categoryCount,{backgroundColor:'#C4C4C4'}] }>
+                        <Text style={styles.categoryCountText}>1</Text>
+                      </View>
+                    </View>
+                  </View>
+                  <Gap height={11}/>
+                  <View style={{borderColor:'#C4C4C4', borderWidth:1, width:'100%'}}/>
+                  <View style={styles.content}>
+                  <Gap height={18}/>
+                    <View>
+                      <Text style={{fontFamily:'Poppins-Medium', fontSize:18, color:'#000000'}}>TODAY</Text>
+                    </View>
+                    <Gap height={18}/>
+
+                  {/* Card Notification  */}
+                    <TouchableOpacity>
+                        <View style={{flexDirection:'row'}}>
+                          <View>
+                            <Image
+                                source={Images1}
+                                style={styles.tinyLogo}
+                                />
+                          </View>
+                          <Gap width={9}/>
+                          <View style={{flexDirection:'column'}}>
+                            <View style={{flexDirection:'row'}}>
+                              <View>
+                                <Text style={{fontFamily:'OpenSans-SemiBold', fontSize:14, color:'#000000'}}>Jhon Doe</Text>
+                              </View>
+                              <Gap width={11}/>
+                              <View style={{flexDirection:'row',}}>
+                                  <View>
+                                    <Text>Class</Text>
+                                  </View>
+                                  <Gap width={6}/>
+                                  <View>
+                                    <Text>|</Text>
+                                  </View>
+                                  <Gap width={6}/>
+                                  <View>
+                                    <Text>2h Ago</Text>
+                                  </View>
+                              </View>
+                            </View>
+                            <View > 
+                              <Text style={{fontFamily:"Popins-Regular", fontSize:14, color: '#000000', width:250}}>Upload a class task in class Organization Behavior</Text>
+                            </View>
+                          </View>
+                        </View>
+                    </TouchableOpacity>
+
+
+
+                  </View>
+                 </View>
+            </Notification>
+            {/* Add Notification Modal */}
+
+
 
             <TouchableOpacity 
             onPress={() => setVisible(true)}
@@ -211,11 +347,9 @@ const styles = StyleSheet.create({
         height:125,
     },
     headerContent:{
-      // backgroundColor:'red',
         flexDirection:'row',
         justifyContent: 'space-evenly',
         alignItems:'center',
-        // backgroundColor:'lightgreen',
         marginHorizontal:15        
     },
     tinyLogo: {
@@ -239,7 +373,6 @@ const styles = StyleSheet.create({
       searchSection: {
         marginHorizontal:15,
         marginTop: 47,
-        // flex: 1,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
@@ -263,6 +396,8 @@ const styles = StyleSheet.create({
         height:46,
         width:'90%'
     },
+
+    //Add Class Modal
     modalView: {
         margin: 20,
         backgroundColor: "white",
@@ -317,13 +452,12 @@ const styles = StyleSheet.create({
     headerPopUp:{
       alignItems:'flex-end',
       paddingTop:11,
-      paddingRight:12,
     },
     textInputClassCode:{
         paddingTop:10,
         paddingBottom:10,
         paddingLeft:10,
-        borderWidth:1,
+        // borderWidth:1,
         borderColor:'black',
         width:200
     },
@@ -346,5 +480,48 @@ const styles = StyleSheet.create({
       height:28,
       width:67,
       backgroundColor:'#356CB1'
+    },
+    // Notification Pop Up Modal
+    modalContainerNotification: {
+      marginTop:80,
+      width: '92%',
+      height:404,
+      backgroundColor: 'white',
+      // paddingHorizontal: 20,
+      // paddingVertical: 30,
+      borderRadius: 14,
+      elevation: 200,
+    },
+    notificationCategoryContainer:{
+      flexDirection:'row',
+      justifyContent:'space-around',
+    },
+    categoryNotication:{
+      flexDirection:'row',
+      justifyContent:'center',
+      alignItems:'center'
+    },
+    categoryName:{
+      marginRight:4
+    },
+    categoryCount:{
+      height:23,
+      width:23,
+      justifyContent:'center',
+      alignItems:'center',
+      borderRadius: 4
+    },
+    categoryCountText:{
+      color: '#FFFF',
+      fontSize:14,
+      fontFamily:'Poppins-Medium',
+    },
+    categoryTextName:{
+      fontSize:14,
+      fontFamily:'Poppins-Medium',
+    },
+    content:{
+      marginHorizontal:10
     }
+
 })
