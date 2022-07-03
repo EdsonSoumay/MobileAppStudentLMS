@@ -1,16 +1,59 @@
-import { StyleSheet, Text, View, Image, TextInput, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Image, TextInput, ScrollView, Modal, TouchableOpacity, Animated } from 'react-native'
 import React from 'react'
 import { Gap } from '../../components'
-import { AboutIcon, ChatIcon, DiscussionIcon, Images1, Images2, SendMessageIcon } from '../../assets'
+import { AboutIcon, ChatIcon, DiscussionIcon, Images1, CloseIcon,AboutAcademicIlustration, Images2, SendMessageIcon } from '../../assets'
 import AcademicContent from '../../assets/json/AcademicContent.json'
+
+const AboutPopUp = ({visible, children}) => {
+    const [showModal, setShowModal] = React.useState(visible);
+    const scaleValue = React.useRef(new Animated.Value(0)).current;
+    React.useEffect(() => {
+      toggleModal();
+    }, [visible]);
+    const toggleModal = () => {
+      if (visible) {
+        setShowModal(true);
+        Animated.spring(scaleValue, {
+          toValue: 1,
+          duration: 300,
+          useNativeDriver: true,
+        }).start();
+      } else {
+        setTimeout(() => setShowModal(false), 200);
+        Animated.timing(scaleValue, {
+          toValue: 0,
+          duration: 300,
+          useNativeDriver: true,
+        }).start();
+      }
+    };
+    return (
+      <Modal transparent visible={showModal}>
+        <View style={styles.modalBackGround}>
+          <Animated.View 
+            style={[styles.modalContainerNotification, {transform: [{scale: scaleValue}]}]}>
+            {children}
+          </Animated.View>
+        </View>
+      </Modal>
+    );
+  };
+
 
 
 const Academic = () => {
+
+    const [AboutVisible, setAboutVisible] = React.useState(false);
+
   return (
     <>
         <View style={styles.header}>
             <View style={{alignItems:'flex-end'}}>
+                <TouchableOpacity
+                 onPress={() => setAboutVisible(true)}
+                 >
                 <AboutIcon />
+                </TouchableOpacity>
             </View>
             <Gap height={16}/>
                 <View style={{}}>
@@ -65,7 +108,7 @@ const Academic = () => {
             AcademicContent.AcademicContent.map((data, i)=>{
                         console.log("data:",data)
                 return(
-                    <View 
+                    <TouchableOpacity 
                         style={styles.content}
                         key={`index:${i}`}
                     >
@@ -102,11 +145,39 @@ const Academic = () => {
                                     <Text style={{fontFamily:'Poppins-Medium', fontSize:14, color:'#676767'}}>{data.comment} Comment</Text>
                                 </View>
                             </View>
-                        </View>
+                        </TouchableOpacity >
                         )
                     })
                 }
             </ScrollView>
+
+            {/* Add About Modal */}
+            <AboutPopUp visible={AboutVisible}>
+                  <View style={styles.headerPopUp}>
+                     <TouchableOpacity onPress={() => setAboutVisible(false)}>
+                          <CloseIcon width={12} height={12}/>
+                     </TouchableOpacity>
+                  </View>
+                 <View style={styles.aboutPopUp}>
+                  <View>
+                    <Text style={{fontFamily:'Poppins-SemiBold', fontSize:20, color:'#1E1E1E'}}>About Academic Guidance </Text>
+                  </View>
+                  <View>
+                   <AboutAcademicIlustration/>
+                  </View>
+                  <Gap height={21.13}/>
+                  <View>
+                    <Text style={{fontFamily:'Poppins-Regular', fontSize: 14, color:'#000000'}}>
+                        Room : https://us02web.zoom.us/
+                        Lorem Ipsum is simply dummy text of the 
+                        printing and typesetting industry Lorem 
+                        Ipsum is simply dummy text of the printing
+                    </Text>
+                  </View>
+                  
+                 </View>
+            </AboutPopUp>
+            {/* Add About Modal */}
     </>
   )
 }
@@ -167,5 +238,30 @@ const styles = StyleSheet.create({
     },
       text:{
         fontSize: 14
-      }
+      },
+      modalBackGround: {
+        flex: 1,
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        // justifyContent: 'center',
+        alignItems: 'center',
+    },
+      modalContainerNotification: {
+        marginTop:80,
+        width: '92%',
+        height:404,
+        backgroundColor: 'white',
+        // paddingHorizontal: 20,
+        // paddingVertical: 30,
+        borderRadius: 14,
+        elevation: 200,
+      },
+      headerPopUp:{
+        alignItems:'flex-end',
+        paddingTop:11,
+        marginHorizontal:15
+      },
+      aboutPopUp:{
+        alignItems:'center',
+        marginHorizontal:15
+    }
 })
