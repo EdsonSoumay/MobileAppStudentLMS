@@ -1,0 +1,41 @@
+{
+    "comments": [],
+    "profile": {
+      "name": "typicode"
+    },
+    "AcademicContent": [
+      {
+        "id": "1",
+        "name": "Student 2",
+        "profile_picture": "B",
+        "time": "25 February 2022",
+        "content":"Lorem Ipsum is simply dummy text of the  printing and typesetting industry simply dummy text of the printing and type industry",
+        "comment" : 3
+      },
+      {
+        "id": "2",
+        "name": "Student 3",
+        "profile_picture": "B",
+        "time": "27 February 2022",
+        "comment" : 4,
+        "content":"Lorem Ipsum is simply dummy text of the  printing and typesetting industry simply dummy text of the printing and t"
+
+      },
+      {
+        "id": "3",
+        "name": "Student 4",
+        "profile_picture": "B",
+        "time": "28 February 2022",
+        "content":"Lorem Ipsum is simply dummy text of the  printing and typesetting industry simply dummy text of the printing and type industry",
+        "comment" : 5
+      },
+      {
+        "id": "4",
+        "name": "Student 5",
+        "profile_picture": "B",
+        "time": "28 February 2022",
+        "content":"Lorem Ipsum is simply dummy text of the  printing and typesetting industry simply dummy text of the printing and type industry",
+        "comment" : 6
+      }     
+    ]
+}
