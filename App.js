@@ -4,6 +4,7 @@ import SplashScreen from './src/pages/SplashScreen'
 import Login from './src/pages/Login'
 import Home from './src/pages/Home'
 import Academic from './src/pages/Academic'
+import AcademicMember from './src/pages/AcademicMember'
 
 const App = () => {
   return (
@@ -11,7 +12,8 @@ const App = () => {
     {/* <SplashScreen/> */}
     {/* <Login/> */}
     {/* <Home/> */}
-    <Academic/>
+    {/* <Academic/> */}
+    <AcademicMember/>
    </>
   )
 }

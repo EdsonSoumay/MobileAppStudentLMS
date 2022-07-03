@@ -171,7 +171,7 @@ const Academic = () => {
                         Room : https://us02web.zoom.us/
                         Lorem Ipsum is simply dummy text of the 
                         printing and typesetting industry Lorem 
-                        Ipsum is simply dummy text of the printing
+                        Ipsum is simply dummy text of the printings
                     </Text>
                   </View>
                   
