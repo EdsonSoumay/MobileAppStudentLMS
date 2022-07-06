@@ -1,7 +1,8 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, Touchable, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { ArrowLeft, ChatIcon, Images1, Images2 } from '../../assets'
 import { Gap } from '../../components'
+import AcademicMemberList from '../../assets/json/AcademicMember.json'
 
 const AcademicMember = () => {
   return (
@@ -16,69 +17,84 @@ const AcademicMember = () => {
        </View>
     </View>
     <Gap height={23}/>
-    <View style={styles.content}>
-        <View
-            // style advisor
-        >
-            <View>
-                <Text style={{fontFamily:'OpenSans-SemiBold', fontSize: 17, color:'#3A3A3A'}}>Advisor</Text>
-            </View>
-            <Gap height={10}/>
-            <View style={styles.CardAdvisor}>
-                <View style={{flexDirection:'row'}}>
-                    <View>
-                        <Image
-                        source={Images1}
-                        style={styles.tinyLogo}
-                        />
-                </View>
-                <Gap width={13}/>
-                <View style={{flexDirection:"column"}}>
-                    <View>
-                        <Text style={{fontFamily:'OpenSans-SemiBold', fontSize: 17, color:'#3A3A3A'}}>Jhon Doe</Text>
-                    </View>
-                    <View>
-                        <Text style={{fontFamily:'Poppins-Medium', fontSize:13, color:'#787878'}}>JhonDoe@student.unklab.ac.id</Text>
-                    </View>
-                </View>
-                </View>
-                <View style={{justifyContent:'center'}}>
-                    <ChatIcon/>
-                </View>
-            </View>
+    <ScrollView style={styles.content}>
+        <View>
+            <Text style={{fontFamily:'OpenSans-SemiBold', fontSize: 17, color:'#3A3A3A'}}>Advisor</Text>
         </View>
+        <Gap height={10}/>
+        {/* Advisor */}
+        {
+            AcademicMemberList.Advisor.map((data, i)=>{
+                return(
+                <View key={i} style={{marginBottom:10}}>
+                    <View style={styles.CardAdvisor}>
+                        <View style={{flexDirection:'row'}}>
+                            <View>
+                                <Image
+                                source={Images1}
+                                style={styles.tinyLogo}
+                                />
+                        </View>
+                        <Gap width={13}/>
+                        <View style={{flexDirection:"column"}}>
+                            <View>
+                                <Text style={{fontFamily:'OpenSans-SemiBold', fontSize: 17, color:'#3A3A3A'}}>{data.Name}</Text>
+                            </View>
+                            <View>
+                                <Text style={{fontFamily:'Poppins-Medium', fontSize:13, color:'#787878'}}>{data.Email}</Text>
+                            </View>
+                        </View>
+                        </View>
+                        <TouchableOpacity style={{justifyContent:'center'}}>
+                            <ChatIcon/>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+                
+                )
+            })
+            
+        }
         <Gap height={23}/>
-        <View
-            // style student
-        >
-            <View>
-                <Text style={{fontFamily:'OpenSans-SemiBold', fontSize: 17, color:'#3A3A3A'}}>Student</Text>
-            </View>
-            <Gap height={10}/>
-            <View style={styles.CardAdvisor}>
-                <View style={{flexDirection:'row'}}>
-                    <View>
-                        <Image
-                        source={Images2}
-                        style={styles.tinyLogo}
-                        />
-                </View>
-                <Gap width={13}/>
-                <View style={{flexDirection:"column"}}>
-                    <View>
-                        <Text style={{fontFamily:'OpenSans-SemiBold', fontSize: 17, color:'#3A3A3A'}}>Josh</Text>
-                    </View>
-                    <View>
-                        <Text style={{fontFamily:'Poppins-Medium', fontSize:13, color:'#787878'}}>josh@student.unklab.ac.id</Text>
-                    </View>
-                </View>
-                </View>
-                <View style={{justifyContent:'center'}}>
-                    <ChatIcon/>
-                </View>
-            </View>
+
+        {/* Student */}
+        <View>
+            <Text style={{fontFamily:'OpenSans-SemiBold', fontSize: 17, color:'#3A3A3A'}}>Student</Text>
         </View>
-    </View>
+        <Gap height={10}/>
+        {
+            AcademicMemberList.Student.map((data, i)=>{
+                return(
+                <View key={i} style={{marginBottom:10}}>
+                    <View style={styles.CardAdvisor}>
+                        <View style={{flexDirection:'row'}}>
+                            <View>
+                                <Image
+                                source={Images1}
+                                style={styles.tinyLogo}
+                                />
+                        </View>
+                        <Gap width={13}/>
+                        <View style={{flexDirection:"column"}}>
+                            <View>
+                                <Text style={{fontFamily:'OpenSans-SemiBold', fontSize: 17, color:'#3A3A3A'}}>{data.Name}</Text>
+                            </View>
+                            <View>
+                                <Text style={{fontFamily:'Poppins-Medium', fontSize:13, color:'#787878'}}>{data.Email}</Text>
+                            </View>
+                        </View>
+                        </View>
+                        <TouchableOpacity style={{justifyContent:'center'}}>
+                            <ChatIcon/>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+                
+                )
+            })
+            
+        }
+    </ScrollView>
    </>
   )
 }

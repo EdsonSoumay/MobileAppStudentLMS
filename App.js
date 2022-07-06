@@ -5,6 +5,7 @@ import Login from './src/pages/Login'
 import Home from './src/pages/Home'
 import Academic from './src/pages/Academic'
 import AcademicMember from './src/pages/AcademicMember'
+import AcademicChat from './src/pages/AcademicChat'
 
 const App = () => {
   return (
@@ -13,7 +14,8 @@ const App = () => {
     {/* <Login/> */}
     {/* <Home/> */}
     {/* <Academic/> */}
-    <AcademicMember/>
+    {/* <AcademicMember/> */}
+    <AcademicChat/>
    </>
   )
 }
