@@ -1,9 +1,13 @@
-import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View, ScrollView, Image, TextInput, TouchableOpacity } from 'react-native'
+import React,{useState} from 'react'
 import { ArrowLeft, AttachmentIcon, Images2, SendMessageIcon } from '../../assets'
 import { Gap } from '../../components'
+import AcademicChatdata from '../../assets/json/AcademicChat.json'
 
 const AcademicChat = () => {
+
+  // const [StyleOnBodyChat, setStyleOnBodyChat] = useState('flex-end')
+
   return (
   <>
     <View style={{backgroundColor:'#356CB1', flex:1}}>
@@ -24,11 +28,60 @@ const AcademicChat = () => {
                 <Text style={{fontFamily:'OpenSans-Regular', fontSize:20, color:'#FFFFFF'}}>Jhon Doe</Text>
             </View>
         </View>
-    <View style={styles.body}> 
-        <View>
-            {/* <Text>Messagge</Text> */}
-        </View>
-        <View style={styles.containerTextInputandSendMessage}>
+    
+
+    < ScrollView  style={styles.body}> 
+    <Gap height={30}/>
+    {/* <View style={styles(StyleOnBodyChat).body}>  */}
+    {
+        AcademicChatdata.AcademicChat.map((data, i)=>{
+            const userSebelumnya = AcademicChatdata.AcademicChat[i - 1]?.user;
+            const userSekarang = data.user;
+            const userSelanjutnya = AcademicChatdata.AcademicChat[i + 1]?.user;
+
+            console.log("user selanjutnya:",data.id , userSelanjutnya)
+            return(   
+              
+             data.user === 'Jhon Doe' ?
+              <View style={userSelanjutnya == undefined? [ styles.friendChat,{marginBottom: 70}]: [styles.friendChat]} key={i}>                        
+                    {/*
+                    // jangan hapus code ini dalam kondisi apapun, ini code chat yg berharga 
+                      <Text style={{color:'blue', fontWeight:'bold', fontSize:20}}>         
+                      {
+                        userSekarang === userSebelumnya
+                        ? `` 
+                        : `${data.user}: `   
+                      }
+                    </Text> */}
+
+                    <Text style={{color:'blue', fontWeight:'bold', fontSize:13, fontFamily:'Poppins-Regular', color:'#000000'}}>   
+                        {`${data.content} `}   
+                    </Text>
+                </View>
+              :
+               data.user === 'Josh' ?
+               <View style={userSelanjutnya == undefined? [ styles.myChat,{marginBottom: 70}]: [styles.myChat]} key={i}>                        
+
+                  {/* 
+                    // jangan hapus code ini dalam kondisi apapun, ini code chat yg berharga 
+                  <Text style={{color:'red', fontWeight:'bold', fontSize:20}}>
+                    {
+                       userSekarang === userSebelumnya
+                       ? `` 
+                       : `${data.user}: `   
+                    }
+                  </Text> */}
+                  
+                  <Text style={{color:'red', fontSize:20, }}>{data.content}</Text>
+                  </View>
+                  :null
+               )
+        })
+    }
+    </ScrollView>
+    {/* <Gap height={100}/> */}
+
+    <View style={styles.containerTextInputandSendMessage}>
             <View style={styles.containerTextInput}>
                 <TextInput
                     placeholder='Type a message'
@@ -41,13 +94,13 @@ const AcademicChat = () => {
             </TouchableOpacity>
         </View>
     </View>
-    </View>
   </>
   )
 }
 
 export default AcademicChat
 
+//  const styles = (props) => StyleSheet.create({
 const styles = StyleSheet.create({
     header:{
         flexDirection:'row',
@@ -62,16 +115,18 @@ const styles = StyleSheet.create({
       },
       body:{
         backgroundColor:'#FFFFFF',
-        flex: 1,
+        // flex: 1,
         borderTopRightRadius: 25,
         borderTopLeftRadius: 25,
         // justifyContent:'center',
-        // alignItems:'center',
-        borderTopRadius: 25
+        // alignItems:'flex-end',
+        // alignItems:'flex-start',
+        borderTopRadius: 25,
       },
       containerTextInputandSendMessage:{
             position:'absolute',
-            top: '85%',
+            // top: '85%',
+            bottom:'2%',
             paddingHorizontal:26.5,
             flexDirection:'row',
             height: 45,
@@ -86,6 +141,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'space-around',
         width: '80%',
+        backgroundColor:'#FFFFFF'
       },
       containerSendMessage:{
         backgroundColor:'#356CB1',
@@ -94,5 +150,30 @@ const styles = StyleSheet.create({
         width:45,
         alignItems:'center',
         justifyContent:'center'
-      }
+      },
+      friendChat:{
+        padding: 13,
+        maxWidth:'70%',
+        maxHeight:66,
+        flexDirection:'row',
+        backgroundColor:'#FFFFFF',
+        marginBottom: 11,
+        left: '2%',
+        borderColor:'#E8E8E8',
+        borderWidth: 1,
+        borderRadius: 14
+        
+      },
+      myChat:{
+        padding: 13,
+        maxWidth:'70%',
+        maxHeight:66,
+        flexDirection:'row',
+        backgroundColor:'#FFFFFF',
+        marginBottom: 11,
+        left: '12%',
+        borderColor:'#E8E8E8',
+        borderWidth: 1,
+        borderRadius: 14
+      },
 })

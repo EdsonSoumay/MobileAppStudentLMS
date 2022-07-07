@@ -1,0 +1,69 @@
+{
+    "AcademicChat": [
+        {
+            "id" : 1,
+            "user" : "Jhon Doe",
+            "content" : "halo"
+        },
+        {
+            "id" : 2,
+            "user" : "Jhon Doe",
+            "content" : "Selamat malam"
+        },
+        {
+            "id" : 3,
+            "user" : "Josh",
+            "content" : "halo juga"
+        },
+        {
+            "id" : 4,
+            "user" : "Josh",
+            "content" : "Apa kabar?"
+        },
+        {
+            "id" : 5,
+            "user" : "Jhon Doe",
+            "content" : "Baik Baik Saja"
+        },
+        {
+            "id" : 6,
+            "user" : "Josh",
+            "content" : "Syukurlah"
+        },
+        {
+            "id" : 7,
+            "user" : "Josh",
+            "content" : "pa pale pale pale"
+        },
+        {
+            "id" : 8,
+            "user" : "Jhon Doe",
+            "content" : "pa pale pale pale"
+        },
+        {
+            "id" : 9,
+            "user" : "Jhon Doe",
+            "content" : "pa pale pale pale"
+        },
+        {
+            "id" : 10,
+            "user" : "Jhon Doe",
+            "content" : "pa pale pale pale"
+        },
+        {
+            "id" : 11,
+            "user" : "Jhon Doe",
+            "content" : "pa pale pale pale"
+        },
+        {
+            "id" : 12,
+            "user" : "Jhon Doe",
+            "content" : "pa pale pale pale"
+        },
+        {
+            "id" : 13,
+            "user" : "Josh",
+            "content" : "pa pale pale pale"
+        }
+    ]
+}
