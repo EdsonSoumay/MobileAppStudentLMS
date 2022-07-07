@@ -4,75 +4,100 @@
             "id" : 1,
             "user" : "Jhon Doe",
             "content" : "halo",
-            "status" : "Dekan"
+            "status" : "Dekan",
+            "time" : "10.00"
         },
         {
             "id" : 2,
             "user" : "Jhon Doe",
-            "content" : "Selamat malam"
+            "content" : "Selamat malam",
+            "status" : "Dekan",
+            "time" : "10.03"
+
         },
         {
             "id" : 3,
             "user" : "Josh",
-            "content" : "halo juga"
+            "content" : "halo juga",
+            "status" : "Student",
+            "time" : "10.05"
         },
         {
             "id" : 4,
             "user" : "Josh",
-            "content" : "Apa kabar?"
+            "content" : "Apa kabar?",
+            "status" : "Student",
+            "time" : "10.07"
         },
         {
             "id" : 5,
             "user" : "Jhon Doe",
-            "content" : "Baik Baik Saja"
+            "content" : "Baik Baik Saja",
+            "status" : "Dekan",
+            "time" : "10.08"
         },
         {
             "id" : 6,
             "user" : "Josh",
-            "content" : "Syukurlah"
+            "content" : "Syukurlah",
+            "status" : "Student",
+            "time" : "10.12"
         },
         {
             "id" : 7,
             "user" : "Josh",
-            "content" : "pa pale pale pale"
+            "content" : "pa pale pale pale",
+            "status" : "Student",
+            "time" : "10.15"
         },
         {
             "id" : 8,
-            "user" : "Surya",
-            "content" : "saya surya",
-            "status" : "Ketua Senat"
-
+            "user" : "Eric",
+            "content" : "saya Eric",
+            "status" : "Ketua Senat",
+            "time" : "10.18"
         },
         {
             "id" : 9,
-            "user" : "Surya",
-            "content" : "Saya Surya juga",
-            "status" : "Ketua Senat"
-
+            "user" : "Eric",
+            "content" : "Saya Eric juga",
+            "status" : "Ketua Senat",
+            "time" : "10.20"
         },
         {
             "id" : 10,
             "user" : "Jhon Doe",
             "content" : "pa pale pale pale",
-            "status" : "Dekan"
-
+            "status" : "Dekan",
+            "time" : "10.25"
         },
         {
             "id" : 11,
             "user" : "Jhon Doe",
             "content" : "pa pale pale pale",
-            "status" : "Dekan"
+            "status" : "Dekan",
+            "time" : "10.35"
         },
         {
             "id" : 12,
             "user" : "Jhon Doe",
             "content" : "pa pale pale pale",
-            "status" : "Dekan"
+            "status" : "Dekan",
+            "time" : "10.36"
         },
         {
             "id" : 13,
             "user" : "Josh",
-            "content" : " Im josh JOSH pa pale pale pale"
+            "content" : " Im josh JOSH pa pale pale pale",
+            "status" : "Student",
+            "time" : "10.45"
+        },
+        {
+            "id" : 14,
+            "user" : "Surya",
+            "content" : " Im Surya pa pale pale pale",
+            "status" : "Student",
+            "time" : "10.46"
         }
     ]
 }

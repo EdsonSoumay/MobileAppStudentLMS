@@ -37,6 +37,8 @@ const Discussion = () => {
              data.user === data.user ?
                 data.user !== 'Josh' ?
                 <View style={userSelanjutnya == undefined? [ styles.friendChat,{marginBottom: 70}]: [styles.friendChat]} key={i}>                        
+                       
+                       <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
                         {
                             userSekarang === userSebelumnya ?
                             null
@@ -45,13 +47,35 @@ const Discussion = () => {
                             {data.user}  
                         </Text>
                         }
-                            <Gap height={8}/>
+                        {
+                            data.status !== 'Student'?
+                            // userSebelumnya == 'Josh'?
+                            userSekarang === userSebelumnya || userSekarang === userSebelumnya == 'Josh' ?
+                            null
+                            :
+                            <Text style={{fontFamily:'Poppins-SemiBold', color:'#000000',fontSize: 11}}>         
+                                {data.status}
+                            </Text>
+                            : null  
+                        }
+                        </View>
+
+
+                        <Gap height={8}/>
                         <Text style={{fontSize:13, fontFamily:'Poppins-Regular', color:'#111111'}}>   
                             {`${data.content} `}   
                         </Text>
+                        <Gap height={10}/>
+                        <View style={{flexDirection:'row', justifyContent:'flex-end'}}>
+                            <Text style={{fontSize:10, fontFamily:'Poppins-Regular', color:'#888888'}}>   
+                                {`${data.time} `}   
+                            </Text>
+                        </View>
+
                     </View>
                     :
-                    <View style={userSelanjutnya == undefined? [ styles.myChat,{marginBottom: 70}]: [styles.myChat]} key={i}>                        
+                    <View style={userSelanjutnya == undefined? [ styles.myChat,{marginBottom: 70}]: [styles.myChat]} key={i}>    
+                       <View style={{flexDirection:'row', alignItems:'center', justifyContent:'space-between'}}>
                             {
                                 userSekarang === userSebelumnya ?
                                 null
@@ -60,10 +84,28 @@ const Discussion = () => {
                                 {data.user}  
                                 </Text>
                             }
+                          {
+                            data.status!== 'Student'?
+                            userSekarang === userSebelumnya ?
+                            null
+                            :
+                            <Text style={{fontFamily:'Poppins-SemiBold', color:'#FFFFFF',fontSize: 11}}>         
+                                {data.status}
+                            </Text>
+                            : null  
+                        }
+                        
+                        </View>
                         <Gap height={8}/>
                         <Text style={{fontSize:13, fontFamily:'Poppins-Regular', color:'#FFFFFF'}}>   
                             {`${data.content} `}   
                         </Text>
+                        <Gap height={10}/>
+                        <View style={{flexDirection:'row', justifyContent:'flex-end'}}>
+                            <Text style={{fontSize:10, fontFamily:'Poppins-Regular', color:'#FFFFFF'}}>   
+                                {`${data.time} `}   
+                            </Text>
+                        </View>
                     </View>
                     :null
              )     
@@ -105,9 +147,9 @@ const styles = StyleSheet.create({
         borderTopRadius: 25,
     },
     friendChat:{
-        paddingVertical: 14,
-        // paddingTop: 14,
-        // paddingBottom:20,
+        // paddingVertical: 14,
+        paddingTop: 14,
+        paddingBottom:8,
         paddingHorizontal:27,
         maxWidth:'70%',
         maxHeight:200,
@@ -120,7 +162,9 @@ const styles = StyleSheet.create({
         borderRadius: 14 
   },
   myChat:{
-        padding: 13,
+        paddingTop: 14,
+        paddingBottom:8,
+        paddingHorizontal:27,
         maxWidth:'70%',
         maxHeight:200,
         flexDirection:'column',
