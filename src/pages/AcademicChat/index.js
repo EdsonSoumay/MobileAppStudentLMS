@@ -54,7 +54,7 @@ const AcademicChat = () => {
                       }
                     </Text> */}
 
-                    <Text style={{color:'blue', fontWeight:'bold', fontSize:13, fontFamily:'Poppins-Regular', color:'#000000'}}>   
+                    <Text style={{fontSize:13, fontFamily:'Poppins-Regular', color:'#000000'}}>   
                         {`${data.content} `}   
                     </Text>
                 </View>
@@ -72,21 +72,22 @@ const AcademicChat = () => {
                     }
                   </Text> */}
                   
-                  <Text style={{color:'red', fontSize:20, }}>{data.content}</Text>
+                  <Text style={{fontSize:13, fontFamily:'Poppins-SemiBold', color:'#FFFFFF'}}>   
+                        {`${data.content} `}   
+                    </Text>
                   </View>
                   :null
                )
         })
     }
     </ScrollView>
-    {/* <Gap height={100}/> */}
 
     <View style={styles.containerTextInputandSendMessage}>
             <View style={styles.containerTextInput}>
                 <TextInput
                     placeholder='Type a message'
                 />
-                <AttachmentIcon/>
+                {/* <AttachmentIcon/> */}
             </View>
             <TouchableOpacity style={styles.containerSendMessage}>
                 {/* <Text>send</Text> */}
@@ -132,6 +133,7 @@ const styles = StyleSheet.create({
             height: 45,
             justifyContent:'space-between',
             width:'100%',
+            // backgroundColor:'#FFFFFF'
       },
       containerTextInput:{
         borderColor:'#E8E8E8',
@@ -169,7 +171,8 @@ const styles = StyleSheet.create({
         maxWidth:'70%',
         maxHeight:66,
         flexDirection:'row',
-        backgroundColor:'#FFFFFF',
+        backgroundColor:'#356CB1',
+        opacity: 0.7,
         marginBottom: 11,
         left: '12%',
         borderColor:'#E8E8E8',
