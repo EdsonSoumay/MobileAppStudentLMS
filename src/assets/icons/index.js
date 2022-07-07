@@ -21,6 +21,7 @@ import HomeIcon from './home-icon.svg'
 import InformationIcon from './information-icon.svg'
 import LinkIcon from './link-icon.svg'
 import Logo from './logo.svg'
+import LogoFIK from './logoFIK.svg'
 import LogOutIcon from './logout-icon.svg'
 import NewsIcon from './news-icon.svg'
 import OneDriveIcon from './oneDrive-icon.svg'
@@ -60,6 +61,7 @@ export {
     InformationIcon,
     LinkIcon,
     Logo,
+    LogoFIK,
     LogOutIcon,
     NewsIcon,
     OneDriveIcon,

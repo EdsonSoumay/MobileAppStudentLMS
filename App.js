@@ -8,6 +8,7 @@ import AcademicMember from './src/pages/AcademicMember'
 import AcademicChat from './src/pages/AcademicChat'
 import News from './src/pages/News'
 import EachNews from './src/pages/EachNews'
+import Discussion from './src/pages/Discussion'
 
 const App = () => {
   return (
@@ -19,7 +20,8 @@ const App = () => {
     {/* <AcademicMember/> */}
     {/* <AcademicChat/> */}
     {/* <News/> */}
-    <EachNews/>
+    {/* <EachNews/> */}
+    <Discussion/>
    </>
   )
 }
