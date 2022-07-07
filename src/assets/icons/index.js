@@ -2,6 +2,7 @@ import AboutIcon from './about-icon.svg'
 import AcademicIcon from './academic-icon.svg'
 import ArchiveIcon from './archive-icon.svg'
 import ArrowLeft from './arrow-left.svg'
+import ArrowLeftBlack from './arrow-Left-black.svg'
 import AttachmentIcon from './attachment-icon.svg'
 import BellIcon from './bell-icon.svg'
 import CalendarIcon from './calendar-icon.svg'
@@ -40,6 +41,7 @@ export {
     AcademicIcon,
     ArchiveIcon,
     ArrowLeft,
+    ArrowLeftBlack,
     AttachmentIcon,
     BellIcon,
     CalendarIcon,
