@@ -3,7 +3,8 @@
         {
             "id" : 1,
             "user" : "Jhon Doe",
-            "content" : "halo"
+            "content" : "halo",
+            "status" : "Dekan"
         },
         {
             "id" : 2,
@@ -37,28 +38,36 @@
         },
         {
             "id" : 8,
-            "user" : "Jhon Doe",
-            "content" : "saya surya"
+            "user" : "Surya",
+            "content" : "saya surya",
+            "status" : "Ketua Senat"
+
         },
         {
             "id" : 9,
-            "user" : "Jhon Doe",
-            "content" : "pa pale pale pale"
+            "user" : "Surya",
+            "content" : "Saya Surya juga",
+            "status" : "Ketua Senat"
+
         },
         {
             "id" : 10,
             "user" : "Jhon Doe",
-            "content" : "pa pale pale pale"
+            "content" : "pa pale pale pale",
+            "status" : "Dekan"
+
         },
         {
             "id" : 11,
             "user" : "Jhon Doe",
-            "content" : "pa pale pale pale"
+            "content" : "pa pale pale pale",
+            "status" : "Dekan"
         },
         {
             "id" : 12,
             "user" : "Jhon Doe",
-            "content" : "pa pale pale pale"
+            "content" : "pa pale pale pale",
+            "status" : "Dekan"
         },
         {
             "id" : 13,

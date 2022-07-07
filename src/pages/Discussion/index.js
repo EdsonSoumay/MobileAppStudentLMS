@@ -6,6 +6,7 @@ import DiscussionData from '../../assets/json/Discussion.json'
 
 
 const Discussion = () => {
+
   return (
     <>
       <View style={styles.header}>
@@ -33,40 +34,39 @@ const Discussion = () => {
 
             // console.log("user selanjutnya:",data.id , userSelanjutnya)
             return(   
-              
-             data.user === 'Jhon Doe' ?
-              <View style={userSelanjutnya == undefined? [ styles.friendChat,{marginBottom: 70}]: [styles.friendChat]} key={i}>                        
-                      {
-                        userSekarang === userSebelumnya ?
-                         null
-                        : 
-                       <Text style={{fontFamily:'OpenSans-SemiBold', color:'#000000',fontSize: 16}}>         
-                         {data.user}  
-                       </Text>
-                      }
-                        <Gap height={8}/>
-                    <Text style={{fontSize:13, fontFamily:'Poppins-Regular', color:'#111111'}}>   
-                        {`${data.content} `}   
-                    </Text>
-                </View>
-              :
-               data.user === 'Josh' ?
-               <View style={userSelanjutnya == undefined? [ styles.myChat,{marginBottom: 70}]: [styles.myChat]} key={i}>                        
+             data.user === data.user ?
+                data.user !== 'Josh' ?
+                <View style={userSelanjutnya == undefined? [ styles.friendChat,{marginBottom: 70}]: [styles.friendChat]} key={i}>                        
                         {
                             userSekarang === userSebelumnya ?
                             null
                             : 
-                            <Text style={{fontFamily:'OpenSans-SemiBold', color:'#FFFFFF',fontSize: 16}}>         
+                        <Text style={{fontFamily:'OpenSans-SemiBold', color:'#000000',fontSize: 16}}>         
                             {data.user}  
-                            </Text>
+                        </Text>
                         }
-                    <Gap height={8}/>
-                    <Text style={{fontSize:13, fontFamily:'Poppins-Regular', color:'#FFFFFF'}}>   
-                        {`${data.content} `}   
-                    </Text>
-                 </View>
-                  :null
-                 )
+                            <Gap height={8}/>
+                        <Text style={{fontSize:13, fontFamily:'Poppins-Regular', color:'#111111'}}>   
+                            {`${data.content} `}   
+                        </Text>
+                    </View>
+                    :
+                    <View style={userSelanjutnya == undefined? [ styles.myChat,{marginBottom: 70}]: [styles.myChat]} key={i}>                        
+                            {
+                                userSekarang === userSebelumnya ?
+                                null
+                                : 
+                                <Text style={{fontFamily:'OpenSans-SemiBold', color:'#FFFFFF',fontSize: 16}}>         
+                                {data.user}  
+                                </Text>
+                            }
+                        <Gap height={8}/>
+                        <Text style={{fontSize:13, fontFamily:'Poppins-Regular', color:'#FFFFFF'}}>   
+                            {`${data.content} `}   
+                        </Text>
+                    </View>
+                    :null
+             )     
             })
            }
     </ScrollView>
