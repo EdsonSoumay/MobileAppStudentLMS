@@ -143,9 +143,10 @@ const ForumClass = () => {
                                 </View>
                                 <Gap width={23}/>
                                 <View>
-                                    <Text style={{color:'#303030', fontFamily:'Poppins-Regular', fontSize:14}}>
+                                    <Text style={{color:'#303030', fontFamily:'OpenSans-SemiBold', fontSize:17}}>
                                         {data.title}
                                     </Text>
+                                    <Gap height={5}/>
                                     <Text style={{color:'#303030', fontFamily:'Poppins-Regular', fontSize:14}}>
                                         {data.time}|  {data.name}
                                     </Text>
