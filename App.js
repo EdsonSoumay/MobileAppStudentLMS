@@ -10,6 +10,7 @@ import News from './src/pages/News'
 import EachNews from './src/pages/EachNews'
 import Discussion from './src/pages/Discussion'
 import ForumClass from './src/pages/ForumClass'
+import ForumClassPeople from './src/pages/ForumClassPeople'
 
 const App = () => {
   return (
@@ -23,7 +24,8 @@ const App = () => {
     {/* <News/> */}
     {/* <EachNews/> */}
     {/* <Discussion/> */}
-    <ForumClass/>
+    {/* <ForumClass/> */}
+    <ForumClassPeople/>
    </>
   )
 }
