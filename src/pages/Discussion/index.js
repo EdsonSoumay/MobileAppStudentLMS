@@ -97,7 +97,7 @@ const Discussion = () => {
                         
                         </View>
                         <Gap height={8}/>
-                        <Text style={{fontSize:13, fontFamily:'Poppins-Regular', color:'#FFFFFF'}}>   
+                        <Text style={{fontSize:13, fontFamily:'Poppins-Medium', color:'#FFFFFF'}}>   
                             {`${data.content} `}   
                         </Text>
                         <Gap height={10}/>
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
         paddingBottom:8,
         paddingHorizontal:27,
         maxWidth:'70%',
-        maxHeight:200,
+        maxHeight:2000,
         flexDirection:'column',
         backgroundColor:'#FFFFFF',
         marginBottom: 11,
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
         paddingBottom:8,
         paddingHorizontal:27,
         maxWidth:'70%',
-        maxHeight:200,
+        maxHeight:2000,
         flexDirection:'column',
         backgroundColor:'#356CB1',
         opacity: 0.7,

@@ -9,6 +9,7 @@ import AcademicChat from './src/pages/AcademicChat'
 import News from './src/pages/News'
 import EachNews from './src/pages/EachNews'
 import Discussion from './src/pages/Discussion'
+import ForumClass from './src/pages/ForumClass'
 
 const App = () => {
   return (
@@ -21,7 +22,8 @@ const App = () => {
     {/* <AcademicChat/> */}
     {/* <News/> */}
     {/* <EachNews/> */}
-    <Discussion/>
+    {/* <Discussion/> */}
+    <ForumClass/>
    </>
   )
 }
