@@ -11,6 +11,7 @@ import EachNews from './src/pages/EachNews'
 import Discussion from './src/pages/Discussion'
 import ForumClass from './src/pages/ForumClass'
 import ForumClassPeople from './src/pages/ForumClassPeople'
+import ForumClassTask from './src/pages/ForumClassTask'
 
 const App = () => {
   return (
@@ -25,7 +26,8 @@ const App = () => {
     {/* <EachNews/> */}
     {/* <Discussion/> */}
     {/* <ForumClass/> */}
-    <ForumClassPeople/>
+    {/* <ForumClassPeople/> */}
+    <ForumClassTask/>
    </>
   )
 }

@@ -7,6 +7,7 @@ import HeaderInLoginIlustration from './headerInLogin-ilustration.svg'
 import QuizStartIlustration from './quizStart-ilustration.svg'
 import QuizSuccesIlustration from './quizSuccess-ilustration.svg'
 import PeopleIlustration from './people-ilustration.svg'
+import ClassTaskIlustration from './classTask-ilustration.svg'
 
 export {
     AboutAcademicIlustration,
@@ -17,5 +18,6 @@ export {
     HeaderInLoginIlustration,
     PeopleIlustration,
     QuizStartIlustration,
-    QuizSuccesIlustration
+    QuizSuccesIlustration,
+    ClassTaskIlustration
 }

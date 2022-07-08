@@ -1,0 +1,34 @@
+{
+    "ClassTask": [
+        {
+            "id" : 1,
+            "title" : "Quiz 1",
+            "dueDate" : "Due Date 17 feb, 09.30",
+            "status" : "Done"
+        },
+        {
+            "id" : 2,
+            "title" : "Assignment 1",
+            "dueDate" : "Due Date 17 feb, 10.30",
+            "status" : "Done"
+        },
+        {
+            "id" : 3,
+            "title" : "Quiz 2",
+            "dueDate" : "Due Date 17 feb, 11.30",
+            "status" : "In Progress"
+        },
+        {
+            "id" : 4,
+            "title" : "Assignment 2",
+            "dueDate" : "Due Date 17 feb, 08.30",
+            "status" : "Missing"
+        },
+        {
+            "id" : 5,
+            "title" : "Assignment 3",
+            "dueDate" : "Due Date 17 feb, 08.30",
+            "status" : "Missing"
+        }
+    ]
+}
