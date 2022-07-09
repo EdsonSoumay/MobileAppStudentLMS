@@ -8,8 +8,8 @@ const ForumClassTask = () => {
 
     const [Category, setCategory] = useState('')
     const [ListClassTask, setListClassTask] = useState('')
-    
-    
+    const [FilteredTask, setFilteredTask] = useState('')
+
     useEffect(() => {
         let newArray = []
         let arrDone = ClassTask.ClassTask.filter(x => x.status=== 'Done').length
@@ -23,9 +23,34 @@ const ForumClassTask = () => {
     }, [])
     
     useEffect(() => {
+        FilteredTask?
+        setListClassTask(FilteredTask)
+        :
         setListClassTask(ClassTask.ClassTask)
-    }, [ClassTask.ClassTask])
+    }, [ClassTask.ClassTask, FilteredTask])
     
+    const filterTask = (data) =>{
+        setFilteredTask(data)
+    }
+
+    const TypeCategoryFunc = (eachCategory) =>{
+        if(eachCategory === "All"){
+            let AllTask = ClassTask.ClassTask.filter(x => x)
+           filterTask(AllTask)
+        }
+        if(eachCategory === "Done"){
+            let DoneTask = ClassTask.ClassTask.filter(x => x.status === 'Done')
+            filterTask(DoneTask)
+        }
+        if(eachCategory === "Missing"){
+            let MissingTask = ClassTask.ClassTask.filter(x => x.status === 'Missing')
+            filterTask(MissingTask)            
+        } 
+        if(eachCategory === "In Progress"){
+            let InProgressTask = ClassTask.ClassTask.filter(x => x.status === 'In Progress')
+            filterTask(InProgressTask)            
+        }
+    }
 
   return (
     <>
@@ -49,7 +74,11 @@ const ForumClassTask = () => {
       <View style={styles.category}>
             {
             Category[3]?
-            <TouchableOpacity style={[styles.eachCategory, {backgroundColor:'#356CB1'}]}>
+            <TouchableOpacity style={[styles.eachCategory, {backgroundColor:'#356CB1'}]}
+            onPress={
+                ()=>TypeCategoryFunc('All')
+            }
+            >
                 <Text style={[styles.textCategory, {color:'#FFFFFF'}]}>All { ` `}{Category[3].totalKeseluruhanStatus}</Text>
             </TouchableOpacity>
             :null
@@ -61,7 +90,11 @@ const ForumClassTask = () => {
                        return null
                     }
                     return(
-                    <TouchableOpacity style={styles.eachCategory} key={i}>
+                    <TouchableOpacity style={styles.eachCategory} key={i}
+                        onPress={
+                            ()=>TypeCategoryFunc(category.status)
+                        }
+                    >
                         <Text style={styles.textCategory}>{category.status}{` `} {category.total} </Text>
                     </TouchableOpacity>
                    )
