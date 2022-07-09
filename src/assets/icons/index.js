@@ -6,6 +6,7 @@ import ArrowLeftBlack from './arrow-Left-black.svg'
 import AttachmentIcon from './attachment-icon.svg'
 import BellIcon from './bell-icon.svg'
 import CalendarIcon from './calendar-icon.svg'
+import CalendarBlackIcon from './calendarBLack-icon.svg'
 import CamIcon from './cam-icon.svg'
 import ChatIcon from './chat-icon.svg'
 import ClassTaskIcon from './classTask-icon.svg'
@@ -46,6 +47,7 @@ export {
     AttachmentIcon,
     BellIcon,
     CalendarIcon,
+    CalendarBlackIcon,
     CamIcon,
     ChatIcon,
     ClassTaskIcon,

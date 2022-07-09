@@ -1,6 +1,6 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React,{useState, useEffect} from 'react'
-import { ArrowLeftBlack, CalendarIcon, ClassTaskIlustration } from '../../assets'
+import { ArrowLeftBlack, CalendarBlackIcon, CalendarIcon, ClassTaskIlustration } from '../../assets'
 import { Gap } from '../../components'
 import ClassTask from '../../assets/json/ClassTask.json'
 
@@ -74,30 +74,53 @@ const ForumClassTask = () => {
       <View style={styles.body}>
 
       {
+        ListClassTask?
         ListClassTask.map((data, i)=>{
             return(
-                <View style={styles.card} key={i}>
+                <View style={[styles.card, data.status === 'Done'?{backgroundColor:'#61AF77'}:data.status === 'In Progress'?{backgroundColor:'#FFFFFF', borderWidth: 1, borderColor:'#E8E8E8'}:data.status === 'Missing'?{backgroundColor:'#F9817E'}: null ]} key={i}>
                 <View style={{flexDirection:'column',justifyContent:'space-between'}}>
                     <View>
-                        <Text style={{fontFamily:'OpenSans-SemiBold', fontSize: 17, color:'#FFFFFF'}}>{data.title}</Text>
+                        <Text 
+                        style={
+                             [styles.textTitleCard,
+                                   data.status == "In Progress" ?
+                                   {color:"#000000"}
+                                   :
+                                   {color:"#FFFFFF"},
+                             ]  
+                            }
+                            >{data.title}</Text>
                      </View>
                      <Gap height={6}/>
                     <View style={{flexDirection:'row', alignItems:'center'}}>
                         <View>
-                        <CalendarIcon/>
+                            {
+                                data.status === 'In Progress'?
+                                <CalendarBlackIcon/>
+                                :
+                                 <CalendarIcon />   
+                            }
                         </View>
                         <Gap width={5}/>
                         <View>
-                            <Text style={{fontFamily:'Poppins-Medium', fontSize: 13, color:'#FFFFFF'}}>{data.dueDate}</Text>
+                            <Text style={[styles.textDueDateCard, data.status == "In Progress" ?
+                                   {color:"#000000"}
+                                   :
+                                   {color:"#FFFFFF"},]}>{data.dueDate}</Text>
                         </View>
                     </View>
                 </View>
                 <View style={{flexDirection:'column',justifyContent:'flex-end'}}>
-                    <Text style={{fontFamily:'Poppins-SemiBold', fontSize: 14, color:'#FFFFFF'}}>{data.status}</Text>
+                    <Text style={[styles.textStatusCard, [styles.textTitleCard,
+                                   data.status == "In Progress" ?
+                                   {color:"#000000"}
+                                   :
+                                   {color:"#FFFFFF"},
+                             ]  ]}>{data.status}</Text>
                 </View>
             </View> 
             )
-        })
+        }): null
         
         }
 
@@ -138,7 +161,7 @@ const styles = StyleSheet.create({
         fontSize: 14
     },
     card:{
-        backgroundColor:"#61AF77",
+        // backgroundColor:"#61AF77",
         // height: 80,
         marginBottom:15,
         marginHorizontal: 40,
@@ -150,5 +173,14 @@ const styles = StyleSheet.create({
     },
      body:{
         // alignItems:'center'
-     }
+     },
+     textTitleCard: {
+     fontFamily:'OpenSans-SemiBold', fontSize: 17, color:'#FFFFFF'
+     },
+     textDueDateCard:{
+        fontFamily:'Poppins-Medium', fontSize: 13
+    },
+    textStatusCard:{
+        fontFamily:'Poppins-SemiBold', fontSize: 14, color:'black'
+    }
 })
