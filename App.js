@@ -12,6 +12,7 @@ import Discussion from './src/pages/Discussion'
 import ForumClass from './src/pages/ForumClass'
 import ForumClassPeople from './src/pages/ForumClassPeople'
 import ForumClassTask from './src/pages/ForumClassTask'
+import Simulasi from './simulasi'
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
     {/* <ForumClass/> */}
     {/* <ForumClassPeople/> */}
     <ForumClassTask/>
+     {/* <Simulasi/> */}
    </>
   )
 }

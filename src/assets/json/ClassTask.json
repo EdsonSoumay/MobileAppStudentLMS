@@ -29,6 +29,18 @@
             "title" : "Assignment 3",
             "dueDate" : "Due Date 17 feb, 08.30",
             "status" : "Missing"
+        },
+        {
+            "id" : 6,
+            "title" : "Quiz 3",
+            "dueDate" : "Due Date 17 feb, 08.30",
+            "status" : "Missing"
+        },
+        {
+            "id" : 6,
+            "title" : "Quiz 4",
+            "dueDate" : "Due Date 17 feb, 08.30",
+            "status" : "In Progress"
         }
     ]
 }

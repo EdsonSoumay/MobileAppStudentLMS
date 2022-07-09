@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View, ScrollView } from 'react-native'
 import React,{useState, useEffect} from 'react'
 import { ArrowLeftBlack, CalendarBlackIcon, CalendarIcon, ClassTaskIlustration } from '../../assets'
 import { Gap } from '../../components'
@@ -9,6 +9,8 @@ const ForumClassTask = () => {
     const [Category, setCategory] = useState('')
     const [ListClassTask, setListClassTask] = useState('')
     const [FilteredTask, setFilteredTask] = useState('')
+    const [ActivedTask, setActivedTask] = useState()
+    const [TempActivedTask, setTempActivedTask] = useState('All')
 
     useEffect(() => {
         let newArray = []
@@ -27,28 +29,32 @@ const ForumClassTask = () => {
         setListClassTask(FilteredTask)
         :
         setListClassTask(ClassTask.ClassTask)
-    }, [ClassTask.ClassTask, FilteredTask])
+
+        setActivedTask(TempActivedTask)
+    }, [ClassTask.ClassTask, FilteredTask, TempActivedTask])
     
-    const filterTask = (data) =>{
+
+    const filterTask = (data, eachCategory) =>{
         setFilteredTask(data)
+        setTempActivedTask(eachCategory)
     }
 
     const TypeCategoryFunc = (eachCategory) =>{
         if(eachCategory === "All"){
             let AllTask = ClassTask.ClassTask.filter(x => x)
-           filterTask(AllTask)
+           filterTask(AllTask, eachCategory)
         }
         if(eachCategory === "Done"){
             let DoneTask = ClassTask.ClassTask.filter(x => x.status === 'Done')
-            filterTask(DoneTask)
+            filterTask(DoneTask, eachCategory)
         }
         if(eachCategory === "Missing"){
             let MissingTask = ClassTask.ClassTask.filter(x => x.status === 'Missing')
-            filterTask(MissingTask)            
+            filterTask(MissingTask, eachCategory)            
         } 
         if(eachCategory === "In Progress"){
             let InProgressTask = ClassTask.ClassTask.filter(x => x.status === 'In Progress')
-            filterTask(InProgressTask)            
+            filterTask(InProgressTask, eachCategory)            
         }
     }
 
@@ -74,12 +80,12 @@ const ForumClassTask = () => {
       <View style={styles.category}>
             {
             Category[3]?
-            <TouchableOpacity style={[styles.eachCategory, {backgroundColor:'#356CB1'}]}
+            <TouchableOpacity style={[styles.eachCategory, ActivedTask === 'All'? {backgroundColor:'#356CB1'} : {backgroundColor:'#F1F3F2'} ]}
             onPress={
                 ()=>TypeCategoryFunc('All')
             }
             >
-                <Text style={[styles.textCategory, {color:'#FFFFFF'}]}>All { ` `}{Category[3].totalKeseluruhanStatus}</Text>
+                <Text style={[styles.textCategory, ActivedTask === 'All'? {color:'#FFFFFF'} : {color:'#000000'} ]}>All { ` `}{Category[3].totalKeseluruhanStatus}</Text>
             </TouchableOpacity>
             :null
             }
@@ -90,12 +96,13 @@ const ForumClassTask = () => {
                        return null
                     }
                     return(
-                    <TouchableOpacity style={styles.eachCategory} key={i}
+                    <TouchableOpacity style={[styles.eachCategory, ActivedTask === category.status? {backgroundColor:'#356CB1'} : {backgroundColor:'#F1F3F2'} ]} 
+                    key={i}
                         onPress={
                             ()=>TypeCategoryFunc(category.status)
                         }
                     >
-                        <Text style={styles.textCategory}>{category.status}{` `} {category.total} </Text>
+                        <Text style={[styles.textCategory, ActivedTask === category.status? {color:'#FFFFFF'} : {color:'#000000'} ]}>{category.status}{` `} {category.total} </Text>
                     </TouchableOpacity>
                    )
                 })
@@ -104,7 +111,7 @@ const ForumClassTask = () => {
 
       </View>
       <Gap height={15}/>
-      <View style={styles.body}>
+      <ScrollView style={styles.body}>
 
       {
         ListClassTask?
@@ -157,7 +164,7 @@ const ForumClassTask = () => {
         
         }
 
-      </View>
+      </ScrollView>
     </>
   )
 }
