@@ -12,7 +12,8 @@ import Discussion from './src/pages/Discussion'
 import ForumClass from './src/pages/ForumClass'
 import ForumClassPeople from './src/pages/ForumClassPeople'
 import ForumClassTask from './src/pages/ForumClassTask'
-import Simulasi from './simulasi'
+// import Simulasi from './simulasi'
+import SubmissionClassTask from './src/pages/SubmissionClassTask'
 
 const App = () => {
   return (
@@ -28,8 +29,9 @@ const App = () => {
     {/* <Discussion/> */}
     {/* <ForumClass/> */}
     {/* <ForumClassPeople/> */}
-    <ForumClassTask/>
+    {/* <ForumClassTask/> */}
      {/* <Simulasi/> */}
+    <SubmissionClassTask/>
    </>
   )
 }

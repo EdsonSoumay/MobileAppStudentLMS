@@ -33,6 +33,7 @@ import SendMessageIcon from './sendMessage-icon.svg'
 import SettingIcon from './setting-icon.svg'
 import TelephoneIcon from './telephone-icon.svg'
 import TimeIcon from './time-icon.svg'
+import TimeBlackIcon from './timeBlack-icon.svg'
 import UplaodIcon from './upload-icon.svg'
 import WorldIcon from './world-icon.svg'
 import Hide from './hide-icon.svg'
@@ -75,6 +76,7 @@ export {
     SearchIcon,
     TelephoneIcon,
     TimeIcon,
+    TimeBlackIcon,
     UplaodIcon,
     WorldIcon,
     Hide
