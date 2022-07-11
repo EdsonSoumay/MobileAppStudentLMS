@@ -18,6 +18,7 @@ import SubmissionClassQuiz from './src/pages/SubmissionClassQuiz'
 import StartQuizPage from './src/pages/StartQuizPage'
 import DisplayQuiz from './src/pages/DisplayQuiz'
 import ScoreQuiz from './src/pages/ScoreQuiz'
+import Profile from './src/pages/Profile'
 
 const App = () => {
   return (
@@ -38,7 +39,8 @@ const App = () => {
     {/* <SubmissionClassQuiz/> */}
     {/* <StartQuizPage/> */}
     {/* <DisplayQuiz/> */}
-    <ScoreQuiz/>
+    {/* <ScoreQuiz/> */}
+    <Profile/>
    </>
   )
 }
