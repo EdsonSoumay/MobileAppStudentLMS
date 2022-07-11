@@ -15,6 +15,7 @@ import ForumClassTask from './src/pages/ForumClassTask'
 // import Simulasi from './simulasi'
 import SubmissionClassTask from './src/pages/SubmissionClassTask'
 import SubmissionClassQuiz from './src/pages/SubmissionClassQuiz'
+import StartQuizPage from './src/pages/StartQuizPage'
 
 const App = () => {
   return (
@@ -32,7 +33,8 @@ const App = () => {
     {/* <ForumClassPeople/> */}
     {/* <ForumClassTask/> */}
     {/* <SubmissionClassTask/> */}
-    <SubmissionClassQuiz/>
+    {/* <SubmissionClassQuiz/> */}
+    <StartQuizPage/>
    </>
   )
 }
