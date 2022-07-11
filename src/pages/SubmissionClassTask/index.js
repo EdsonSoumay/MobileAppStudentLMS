@@ -1,6 +1,6 @@
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native'
 import React from 'react'
-import { ArrowLeftBlack, AttachmentIcon, TimeBlackIcon, TimeIcon } from '../../assets';
+import { ArrowLeftBlack, AttachmentIcon, Images2, TimeBlackIcon, TimeIcon } from '../../assets';
 import { Gap } from '../../components';
 
 const SubmissionClassTask = () => {
@@ -68,7 +68,59 @@ const SubmissionClassTask = () => {
         </View>
       </View>
       <View style={styles.comment}>
-        {/* <Text>comment</Text> */}
+        <View style={styles.containerCommentCategory}>
+            <View style={styles.commentCategory}>
+                    <View>
+                        <View style={{flexDirection:'row'}}>
+                            <View>
+                                <Text style={styles.classCommentText}>Class Comment</Text>
+                            </View>
+                            <Gap width={5}/>
+                            <View>
+                                <Text style={[styles.classCommentText, {backgroundColor:'#C4C4C4', paddingVertical:0.1 , paddingHorizontal:5, borderRadius:3}]}>2</Text>
+                            </View>
+                        </View>
+                        <Gap height={6}/>
+                        <View style={[styles.ruler,{backgroundColor:'#000000', borderRadius:0.6}]}/>
+                    </View>
+
+                    <View>
+                        <View style={{flexDirection:'row'}}>
+                            <View>
+                                <Text style={[styles.classCommentText, {color:'#929292'}]}>Private Comment</Text>
+                            </View>
+                            <Gap width={5}/>
+                            <View>
+                                <Text style={[styles.classCommentText, {backgroundColor:'#C4C4C4', paddingVertical:0.1 , paddingHorizontal:5, borderRadius:3}]}>1</Text>
+                            </View>
+                        </View>
+                        <Gap height={6}/>
+                        {/* <View style={[styles.ruler,{backgroundColor:'#000000', borderRadius:0.6}]}/> */}
+                    </View>
+
+            </View>
+            <View style={styles.commentSection}>
+
+            </View>
+        </View>
+        <Gap height={25}/>
+        <View style={styles.commentContent}>
+            <View>
+                <Image
+                source={Images2}
+                style={styles.profileImage}
+                />
+            </View>
+            <Gap width={16}/>
+            <View style={{flexDirection:'column', width: '80%'}}>
+                <View>
+                    <Text style={{fontFamily:'OpenSans-SemiBold', fontSize: 14, color:'#000000'}}>Josh</Text>
+                </View>
+                <View>
+                    <Text style={{fontFamily:'Poppins-Regular', fontSize: 13, color:'#141414'}}>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</Text>
+                </View>
+            </View>
+        </View>
       </View>
     </>
   )
@@ -92,7 +144,7 @@ const styles = StyleSheet.create({
     content:{
         flexDirection:'column',
         marginHorizontal: 31,
-        backgroundColor:'pink',
+        // backgroundColor:'pink',
         height:'63%'
     },
     contentHeader:{
@@ -125,6 +177,25 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         borderRadius: 14
+    },
+    commentCategory:{
+        flexDirection:'row',
+        justifyContent:'space-between'
+    },
+    comment:{
+        marginHorizontal: 31,
+    },
+    classCommentText:
+    {
+        fontFamily:'Poppins-Regular', fontSize: 14, color:"#000000"
+    },
+    profileImage:{
+        width: 31,
+        height: 31,
+        borderRadius: 31 / 2
+    },
+    commentContent:{
+        flexDirection:'row'
     }
 
 })

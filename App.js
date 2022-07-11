@@ -30,7 +30,6 @@ const App = () => {
     {/* <ForumClass/> */}
     {/* <ForumClassPeople/> */}
     {/* <ForumClassTask/> */}
-     {/* <Simulasi/> */}
     <SubmissionClassTask/>
    </>
   )
