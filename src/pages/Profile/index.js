@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native'
 import React,{useState} from 'react'
 import {launchImageLibrary} from 'react-native-image-picker';
 import { Gap } from '../../components';
+import { ArrowLeftBlack } from '../../assets';
 
 const Profile = () => {
 
@@ -26,6 +27,7 @@ const Profile = () => {
   return (
     <View style={{ backgroundColor:'#EEF1F7', flex: 1}}>
     <View style={styles.header}>
+        <ArrowLeftBlack/>
          <View style={styles.containerImage}>
             <View style={styles.avatarWrapper}>
                 <View style={styles.border}>
@@ -97,7 +99,8 @@ export default Profile
 const styles = StyleSheet.create({
     header:{
             height:'30%',
-            justifyContent:'center'
+            justifyContent:'center',
+            padding: 28,
     },
     containerImage:{
         alignItems:'center', 
