@@ -27,7 +27,9 @@ const Profile = () => {
   return (
     <View style={{ backgroundColor:'#EEF1F7', flex: 1}}>
     <View style={styles.header}>
-        <ArrowLeftBlack/>
+        <TouchableOpacity>
+            <ArrowLeftBlack/>
+        </TouchableOpacity>
          <View style={styles.containerImage}>
             <View style={styles.avatarWrapper}>
                 <View style={styles.border}>
@@ -66,6 +68,7 @@ const Profile = () => {
                     <Text style={styles.CategoryClassCount}>33</Text>
                 </View>
             </View>
+            <Gap height={19}/>
             <View>
                 <View style={styles.card}>
                     <Text style={styles.cardTitle}>RELIGION</Text>
