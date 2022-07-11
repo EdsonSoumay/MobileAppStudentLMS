@@ -17,6 +17,7 @@ import SubmissionClassTask from './src/pages/SubmissionClassTask'
 import SubmissionClassQuiz from './src/pages/SubmissionClassQuiz'
 import StartQuizPage from './src/pages/StartQuizPage'
 import DisplayQuiz from './src/pages/DisplayQuiz'
+import ScoreQuiz from './src/pages/ScoreQuiz'
 
 const App = () => {
   return (
@@ -36,7 +37,8 @@ const App = () => {
     {/* <SubmissionClassTask/> */}
     {/* <SubmissionClassQuiz/> */}
     {/* <StartQuizPage/> */}
-    <DisplayQuiz/>
+    {/* <DisplayQuiz/> */}
+    <ScoreQuiz/>
    </>
   )
 }
