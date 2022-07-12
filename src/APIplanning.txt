@@ -1,0 +1,10 @@
+Model:
+1. User
+2. Academic Guidance
+3. Class
+4. Discussion
+5. Chat
+6. News
+7. Quiz
+8. Assignment
+9

@@ -1,4 +1,5 @@
 import AboutIcon from './about-icon.svg'
+import AboutBlackIcon from './aboutBlack-icon.svg'
 import AcademicIcon from './academic-icon.svg'
 import ArchiveIcon from './archive-icon.svg'
 import ArrowLeft from './arrow-left.svg'
@@ -41,6 +42,7 @@ import SearchIcon from './search-icon.svg'
 
 export {
     AboutIcon,
+    AboutBlackIcon,
     AcademicIcon,
     ArchiveIcon,
     ArrowLeft,
