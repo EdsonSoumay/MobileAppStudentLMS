@@ -20,6 +20,7 @@ import DisplayQuiz from './src/pages/DisplayQuiz'
 import ScoreQuiz from './src/pages/ScoreQuiz'
 import Profile from './src/pages/Profile'
 import Setting from './src/pages/Setting'
+import BottomTabNavigation from './src/router/BottomTabsNavigation'
 
 const App = () => {
   return (
@@ -42,7 +43,8 @@ const App = () => {
     {/* <DisplayQuiz/> */}
     {/* <ScoreQuiz/> */}
     {/* <Profile/> */}
-    <Setting/>
+    {/* <Setting/> */}
+    <BottomTabNavigation/>
    </>
   )
 }

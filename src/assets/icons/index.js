@@ -1,6 +1,7 @@
 import AboutIcon from './about-icon.svg'
 import AboutBlackIcon from './aboutBlack-icon.svg'
 import AcademicIcon from './academic-icon.svg'
+import AcademicActiveIcon from './academicActive-icon.svg'
 import ArchiveIcon from './archive-icon.svg'
 import ArrowLeft from './arrow-left.svg'
 import ArrowLeftBlack from './arrow-Left-black.svg'
@@ -15,17 +16,20 @@ import CloseIcon from './close-icon.svg'
 import CommentIcon from './comment-icon.svg'
 import DarkModeIcon from './darkMode-icon.svg'
 import DiscussionIcon from './discussion-icon.svg'
+import DiscussionActiveIcon from './discussionActive-icon.svg'
 import DocIcon from './doc-icon.svg'
 import ForumIcon from './forum-icon.svg'
 import GoogleDriveIcon from './googleDrive-icon.svg'
 import HelpIcon from './help-icon.svg'
 import HomeIcon from './home-icon.svg'
+import HomeActiveIcon from './homeActive-icon.svg'
 import InformationIcon from './information-icon.svg'
 import LinkIcon from './link-icon.svg'
 import Logo from './logo.svg'
 import LogoFIK from './logoFIK.svg'
 import LogOutIcon from './logout-icon.svg'
 import NewsIcon from './news-icon.svg'
+import NewsActiveIcon from './newsActive-icon.svg'
 import OneDriveIcon from './oneDrive-icon.svg'
 import PenIcon from './pen-icon.svg'
 import PeopleIcon from './people-icon.svg'
@@ -44,6 +48,7 @@ export {
     AboutIcon,
     AboutBlackIcon,
     AcademicIcon,
+    AcademicActiveIcon,
     ArchiveIcon,
     ArrowLeft,
     ArrowLeftBlack,
@@ -58,17 +63,20 @@ export {
     CommentIcon,
     DarkModeIcon,
     DiscussionIcon,
+    DiscussionActiveIcon,
     DocIcon,
     ForumIcon,
     GoogleDriveIcon,
     HelpIcon,
     HomeIcon,
+    HomeActiveIcon,
     InformationIcon,
     LinkIcon,
     Logo,
     LogoFIK,
     LogOutIcon,
     NewsIcon,
+    NewsActiveIcon,
     OneDriveIcon,
     PenIcon,
     PeopleIcon,

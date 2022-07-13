@@ -49,7 +49,7 @@ const Setting = () => {
           </View>
         </TouchableOpacity>
         <Gap height={27}/>
-        <View style={styles.card}>
+        <TouchableOpacity style={styles.card}>
           <View style={styles.other}>
             <View>
              <DarkModeIcon/>
@@ -66,7 +66,7 @@ const Setting = () => {
               <Switch/>
             </View>
           </View>
-        </View>
+        </TouchableOpacity>
         <Gap height={27}/>
         <TouchableOpacity style={styles.card}>
           <View style={styles.other}>
