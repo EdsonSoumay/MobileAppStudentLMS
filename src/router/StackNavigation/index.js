@@ -3,7 +3,8 @@ import React from 'react'
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { Home, Setting, ForumClass, Profile, Academic, AcademicMember, AcademicChat, News, EachNews, Discussion } from '../../pages';
+import { Home, Setting, ForumClass, Profile, Academic, AcademicMember, AcademicChat, News, EachNews, Discussion, SplashScreen, Login } from '../../pages';
+import MainBottomTab from '../BottomTabsNavigation';
 
 const Stack = createStackNavigator();
 
@@ -17,7 +18,6 @@ export const StackHome = () => {
     </Stack.Navigator>
   );
 }
-
 
 export const StackAcademic = () => {
   return (
@@ -47,6 +47,14 @@ export const StackDiscussion = () => {
 }
 
 
-
+export const OpeningStack = () => {
+    return (
+      <Stack.Navigator>
+        <Stack.Screen name="SplashScreen" component={SplashScreen} options={{headerShown: false, title: 'SplashScreen'}} />
+        <Stack.Screen name="Login" component={Login} options={{headerShown: false, title: 'Login'}} />
+        <Stack.Screen name="MainBottomTab" component={MainBottomTab} options={{headerShown: false, title: 'MainBottomTab'}} />
+      </Stack.Navigator>
+    );
+  }
 
 

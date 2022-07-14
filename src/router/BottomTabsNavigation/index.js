@@ -12,21 +12,21 @@ const Tab = createBottomTabNavigator();
  
 
 
-function BottomTabNavigation() {
+function MainBottomTab() {
   return (
-    <NavigationContainer>
+    // <NavigationContainer>
       <Tab.Navigator tabBar={ props => <BottomNavigatorCustomize {...props} />}>
       <Tab.Screen name="StackHome" component={StackHome} options={{headerShown: false, title: 'Home'}} />
       <Tab.Screen name="StackAcademic" component={StackAcademic} options={{headerShown: false, title: 'Academic'}} />
       <Tab.Screen name="StackNews" component={StackNews} options={{headerShown: false, title: 'News'}} />
       <Tab.Screen name="StackDiscussion" component={StackDiscussion} options={{headerShown: false, title: 'Discussion'}} />
     </Tab.Navigator>
-    </NavigationContainer>
+    // </NavigationContainer>
   );
 }
 
 
-export default BottomTabNavigation
+export default MainBottomTab
 
 
 

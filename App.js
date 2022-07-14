@@ -20,34 +20,43 @@ import DisplayQuiz from './src/pages/DisplayQuiz'
 import ScoreQuiz from './src/pages/ScoreQuiz'
 import Profile from './src/pages/Profile'
 import Setting from './src/pages/Setting'
-import BottomTabNavigation from './src/router/BottomTabsNavigation'
+import MainBottomTab from './src/router/BottomTabsNavigation'
+import { OpeningStack } from './src/router/StackNavigation'
+import { NavigationContainer } from '@react-navigation/native'
 
 const App = () => {
   return (
-   <>
-    {/* <SplashScreen/> */}
-    {/* <Login/> */}
-    {/* <Home/> */}
-    {/* <Academic/> */}
-    {/* <AcademicMember/> */}
-    {/* <AcademicChat/> */}
-    {/* <News/> */}
-    {/* <EachNews/> */}
-    {/* <Discussion/> */}
-    {/* <ForumClass/> */}
-    {/* <ForumClassPeople/> */}
-    {/* <ForumClassTask/> */}
-    {/* <SubmissionClassTask/> */}
-    {/* <SubmissionClassQuiz/> */}
-    {/* <StartQuizPage/> */}
-    {/* <DisplayQuiz/> */}
-    {/* <ScoreQuiz/> */}
-    {/* <Profile/> */}
-    {/* <Setting/> */}
-    <BottomTabNavigation/>
-   </>
+   <NavigationContainer>
+      <OpeningStack/>
+   </NavigationContainer>
   )
 }
+
+// const App = () => {
+//   return (  
+//   <>
+//     {/* <SplashScreen/> */}
+//     {/* <Login/> */}
+//     {/* <Home/> */}
+//     {/* <Academic/> */}
+//     {/* <AcademicMember/> */}
+//     {/* <AcademicChat/> */}
+//     {/* <News/> */}
+//     {/* <EachNews/> */}
+//     {/* <Discussion/> */}
+//     {/* <ForumClass/> */}
+//     {/* <ForumClassPeople/> */}
+//     {/* <ForumClassTask/> */}
+//     {/* <SubmissionClassTask/> */}
+//     {/* <SubmissionClassQuiz/> */}
+//     {/* <StartQuizPage/> */}
+//     {/* <DisplayQuiz/> */}
+//     {/* <ScoreQuiz/> */}
+//     {/* <Profile/> */}
+//     {/* <Setting/> */}
+//     </>
+//   )
+// }
 
 export default App;
 

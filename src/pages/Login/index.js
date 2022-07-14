@@ -1,46 +1,50 @@
-import { StyleSheet, Text, View, TextInput, KeyboardAvoidingView } from 'react-native'
+import { StyleSheet, Text, View, TextInput, KeyboardAvoidingView, ScrollView } from 'react-native'
 import React from 'react'
 import { HeaderInLoginIlustration, Hide } from '../../assets'
 import { Gap, Button } from '../../components'
-const Login = () => {
+const Login = (props) => {
   return (
-    <KeyboardAvoidingView 
-    behavior ="padding"
-    style={{flexDirection:'column', backgroundColor:'#FFFFF'}}>
-        <View style={{height: 240}}>
+    <>
+        <View >
             <HeaderInLoginIlustration
                 width= "100%"
-                height= "100%"
-                // viewBox= '0 0 354 180'
+                // height= "100%"
+                // // viewBox= '0 0 354 180'
                 preserveAspectRatio = "xMinYMin meet" // I've tried a few options here, including 'none'
             />
         </View>
-        <Gap height={30}/>
-      <View style={{marginHorizontal:45}}>
-        <View>
-            <Text style={{fontFamily:'Poppins-Bold', fontSize:30, color:'#356CB1'}}>Log-in</Text>
-        </View>
-        <Gap height={30}/>
-        <View>
-                <Text style={{fontFamily:'Poppins-Medium', fontSize:14, color:'#01469F'}}>Nomor Regist</Text>
-                <TextInput
-                    style={styles.TextInputStyle}
-                    />
+         <Gap height={30}/>
+          <ScrollView style={{marginHorizontal:45}}>
+            <View>
+                <Text style={{fontFamily:'Poppins-Bold', fontSize:30, color:'#356CB1'}}>Log-in</Text>
             </View>
             <Gap height={30}/>
-            <View>
-            <Text style={{fontFamily:'Poppins-Medium', fontSize:14, color:'#01469F'}}>Password</Text>
-                <View style={{marginLeft:"95%", top:20}}>
-                    <Hide/>
+               <View>
+                <Text style={{fontFamily:'Poppins-Medium', fontSize:14, color:'#01469F'}}>Nomor Regist</Text>
+                  <View style={styles.TextInputStyle} >
+                      <TextInput />
+                  </View>
                 </View>
-                <TextInput  style={styles.TextInputStyle}/>
+                <Gap height={30}/>
+                <View>
+                <Text style={{fontFamily:'Poppins-Medium', fontSize:14, color:'#01469F'}}>Password</Text>
+                  <View style={styles.TextInputStyle}>
+                    <TextInput />
+                     <Hide/>
+                  </View>
+                </View>
+            <Gap height={50}/>
+            <View>
+                <Button 
+                onPress={()=>props.navigation.replace('MainBottomTab')}  
+                name='Log In' 
+                color='#FFF' 
+                fam='Poppins-SemiBold' 
+                size={20} style={styles.btnSubmit} 
+                />
             </View>
-        <Gap height={50}/>
-        <View>
-            <Button name='Log In' color='#FFF' fam='Poppins-SemiBold' size={20} style={styles.btnSubmit}/>
-        </View>
-      </View>
-    </KeyboardAvoidingView>
+          </ScrollView> 
+      </>
   )
 }
 export default Login
@@ -56,96 +60,14 @@ const styles = StyleSheet.create({
         backgroundColor: '#356CB1'
       },
       TextInputStyle:{
-        height: 40,
         borderWidth: 1,
         borderTopWidth:0,
         borderRightWidth:0,
         borderLeftWidth:0,
-        padding: 10,
-        borderColor:'#808080'
-      }
+        borderColor:'#808080',
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center'
+      },
 })
-
-
-
-// import React, {useEffect} from 'react';
-// import { 
-//     View, 
-//     Text, 
-//     TouchableOpacity, 
-//     TextInput,
-//     Platform,
-//     StyleSheet ,
-//     StatusBar,
-//     Alert
-// } from 'react-native';
-
-// import { HeaderInLoginIlustration, Hide } from '../../assets'
-// import { Gap, Button } from '../../components'
-
-
-// const Login = (props) => {
-
-  
-
-//     return (
-//         <View style={styles.container}>
-//             <View style={styles.header}>
-//             <HeaderInLoginIlustration
-//                 width= "100%"
-//                 height= "100%"
-//                 viewBox= '0 0 354 180'
-//                 preserveAspectRatio = "xMinYMin meet" // I've tried a few options here, including 'none'
-//             />
-//             </View>
-//             <View  style={{backgroundColor:'blue', flex: 1}}>
-//                 <Text style={[styles.text_footer,{
-//                 }]}>Username</Text>
-//                 <View style ={styles.action}>
-//                     <TextInput
-//                         placeholder ="your Username"
-                        
-//                         autoCapitalize="none"
-//                     />
-                  
-//                 </View>
-//                 <Text >Passwords</Text>
-//                 <View style ={styles.action}>
-//                     <TextInput
-//                         placeholder ="your Password"
-                       
-//                         // autoCapitalize="none"
-//                     />
-//                 </View>
-//                 </View>
-            
-//         </View>
-//     )
-// }
-
-// export default Login
-
-// const styles = StyleSheet.create({
-//     container: {
-//       flex: 1, 
-//       backgroundColor:'#FFFFF'
-//     },
-//     header: {
-//       backgroundColor:'red',
-//         flex: 2,
-//         justifyContent: 'flex-end',
-//         paddingHorizontal: 20,
-//         paddingBottom: 50,
-//         height: 240,
-//     },
-//     action: {
-//         flexDirection: 'row',
-//         marginTop: 10,
-//         borderBottomWidth: 1,
-//         borderBottomColor: '#f2f2f2',
-//         paddingBottom: 5
-//     },
-
-//   });
-
 
