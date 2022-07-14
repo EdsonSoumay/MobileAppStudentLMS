@@ -143,7 +143,7 @@ const Home = (props) => {
                     return(
                     <TouchableOpacity style={[styles.classCard, {backgroundColor:data.color}]} 
                         key={`index:${i}`}
-                        onPress={()=>props.navigation.navigate('ForumClass')}
+                        onPress={()=>props.navigation.navigate('MainBottomTab2')}
                         >
                         <View style={{flexDirection:'row', justifyContent:'space-around'}}>
 

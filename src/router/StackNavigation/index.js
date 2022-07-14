@@ -1,20 +1,19 @@
-import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 import { createStackNavigator } from '@react-navigation/stack';
 
 import { Home, Setting, ForumClass, Profile, Academic, AcademicMember, AcademicChat, News, EachNews, Discussion, SplashScreen, Login } from '../../pages';
-import MainBottomTab from '../BottomTabsNavigation';
+import {MainBottomTab, MainBottomTab2} from '../BottomTabsNavigation';
 
 const Stack = createStackNavigator();
 
 export const StackHome = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Home" component={Home} options={{headerShown: false, title: 'Home'}} />
-      <Stack.Screen name="Setting" component={Setting} options={{headerShown: false, title: 'Setting'}} />
-      <Stack.Screen name="Profile" component={Profile} options={{headerShown: false, title: 'Profile'}} />
-      <Stack.Screen name="ForumClass" component={ForumClass} options={{headerShown: false, title: 'ForumClass'}} />
+      <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
+      <Stack.Screen name="Setting" component={Setting} options={{headerShown: false}} />
+      <Stack.Screen name="Profile" component={Profile} options={{headerShown: false}} />
+      <Stack.Screen name="MainBottomTab2" component={MainBottomTab2} options={{headerShown: false, title: 'MainBottomTab2'}} />
     </Stack.Navigator>
   );
 }
