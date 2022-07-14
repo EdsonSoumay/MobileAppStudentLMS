@@ -1,14 +1,14 @@
-import { StyleSheet, Text, View, Image, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, Image, ScrollView, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { ArrowLeftBlack, Images1, Images2 } from '../../assets'
 import { Gap } from '../../components'
 
-const EachNews = () => {
+const EachNews = (props) => {
   return (
     <>
-      <View style={styles.header}>
-        <ArrowLeftBlack/>
-      </View>
+      <TouchableOpacity onPress={()=>props.navigation.goBack()} style={styles.header}>
+          <ArrowLeftBlack />
+      </TouchableOpacity>
       <Gap height={33}/>
       <View style={styles.body}>
             <View>

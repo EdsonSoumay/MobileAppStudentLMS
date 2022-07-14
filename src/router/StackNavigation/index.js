@@ -2,9 +2,8 @@ import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
 import { createStackNavigator } from '@react-navigation/stack';
-import { TouchableOpacity } from 'react-native-gesture-handler';
 
-import { Home, Setting, ForumClass, Profile, Academic, AcademicMember, AcademicChat } from '../../pages';
+import { Home, Setting, ForumClass, Profile, Academic, AcademicMember, AcademicChat, News, EachNews, Discussion } from '../../pages';
 
 const Stack = createStackNavigator();
 
@@ -19,12 +18,30 @@ export const StackHome = () => {
   );
 }
 
+
 export const StackAcademic = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Academic" component={Academic} options={{headerShown: false, title: 'Academic'}} />
       <Stack.Screen name="AcademicMember" component={AcademicMember} options={{headerShown: false, title: 'AcademicMember'}} />
       <Stack.Screen name="AcademicChat" component={AcademicChat} options={{headerShown: false, title: 'AcademicChat'}} />
+    </Stack.Navigator>
+  );
+}
+
+export const StackNews = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="News" component={News} options={{headerShown: false, title: 'News'}} />
+      <Stack.Screen name="EachNews" component={EachNews} options={{headerShown: false, title: 'EachNews'}} />
+    </Stack.Navigator>
+  );
+}
+
+export const StackDiscussion = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Discussion" component={Discussion} options={{headerShown: false, title: 'News'}} />
     </Stack.Navigator>
   );
 }

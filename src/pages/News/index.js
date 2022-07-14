@@ -1,9 +1,9 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { Gap } from '../../components'
 import { Images1, TimeIcon } from '../../assets'
 
-const News = () => {
+const News = (props) => {
   return (
     <>
     <View style={styles.header}>
@@ -26,7 +26,7 @@ const News = () => {
             </View>
             <Gap height={8}/>
             <View style={styles.content}>
-                <View style={styles.card}>
+                <TouchableOpacity onPress={()=>props.navigation.navigate('EachNews')} style={styles.card}>
                     <View style={styles.image}>
                         <Image
                             style={styles.imageNews}
@@ -46,7 +46,7 @@ const News = () => {
                             <Text style={{fontFamily:'Poppins-Medium', fontSize: 13, color:"#8F8F8F"}}>10 menit</Text>
                         </View>
                     </View>
-                </View>
+                </TouchableOpacity>
             </View>
     </View>
     </>
