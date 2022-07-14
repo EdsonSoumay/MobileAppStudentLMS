@@ -41,14 +41,16 @@ const AboutPopUp = ({visible, children}) => {
 
 
 
-const ForumClass = () => {
+const ForumClass = (props) => {
 
     const [AboutVisible, setAboutVisible] = React.useState(false);
 
   return (
     <>
         <View style={{marginHorizontal: 16, marginTop: 10}}> 
-            <ArrowLeftBlack/>
+          <TouchableOpacity onPress={()=>props.navigation.goBack()}>
+                <ArrowLeftBlack/>
+            </TouchableOpacity>
         </View>
         <View style={styles.header}>
             <View>

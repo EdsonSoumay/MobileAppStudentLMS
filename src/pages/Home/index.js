@@ -76,7 +76,7 @@ const Notification = ({visible, children}) => {
 
 
 
-const Home = () => {
+const Home = (props) => {
     const path = '../../assets/ilustrations/class2-ilustration.png'
     const [visible, setVisible] = React.useState(false);
     const [NotificationVisible, setNotificationVisible] = React.useState(false);
@@ -88,15 +88,17 @@ const Home = () => {
             <Gap height={60}/>
             <View style={styles.headerContent}>
                     {/* <Gap width="2%"/> */}
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={()=>props.navigation.navigate('Profile')} style={{justifyContent:'center', flexDirection:'row'}}>
+                      <View>
                         <Image
                             source={Images1}
                             style={styles.tinyLogo}
                             />
-                    </TouchableOpacity>
+                      </View>
                     <Gap width={15}/>
-                    <TouchableOpacity>
+                    <View>
                         <Text style={{fontFamily:'OpenSans-SemiBold', fontSize:22, color:'#FFFFFF'}}>Halo,  Josh</Text>
+                    </View>
                     </TouchableOpacity>
                 <Gap width="40%"/>
                 <View style={{flexDirection:'row', maxWidth:100, alignItems:'flex-end', justifyContent:'space-between'}}>
@@ -112,7 +114,7 @@ const Home = () => {
                         </View>
                     </TouchableOpacity>
                    <Gap width={25}/>
-                    <TouchableOpacity style={styles.notificationAndSettingIcon}>
+                    <TouchableOpacity onPress={()=>props.navigation.navigate('Setting')} style={styles.notificationAndSettingIcon}>
                         <SettingIcon
                             height= "80%"
                             width= "80%"
@@ -141,7 +143,7 @@ const Home = () => {
                     return(
                     <TouchableOpacity style={[styles.classCard, {backgroundColor:data.color}]} 
                         key={`index:${i}`}
-                        // onPress={()=>alert()}
+                        onPress={()=>props.navigation.navigate('ForumClass')}
                         >
                         <View style={{flexDirection:'row', justifyContent:'space-around'}}>
 
@@ -283,15 +285,10 @@ const Home = () => {
                           </View>
                         </View>
                     </TouchableOpacity>
-
-
-
                   </View>
                  </View>
             </Notification>
             {/* Add Notification Modal */}
-
-
 
             <TouchableOpacity 
             onPress={() => setVisible(true)}
@@ -315,7 +312,7 @@ const styles = StyleSheet.create({
         borderRadius: 67/2, 
         backgroundColor:'#FFFF',
         position:'absolute', 
-        top: '75%', 
+        top: '80%', 
         right: 29,
         justifyContent:'center',
         alignItems:'center'
@@ -452,6 +449,7 @@ const styles = StyleSheet.create({
     headerPopUp:{
       alignItems:'flex-end',
       paddingTop:11,
+      paddingRight: 11
     },
     textInputClassCode:{
         paddingTop:10,
@@ -523,5 +521,4 @@ const styles = StyleSheet.create({
     content:{
       marginHorizontal:10
     }
-
 })

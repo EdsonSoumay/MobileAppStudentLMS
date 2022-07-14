@@ -14,7 +14,7 @@ import {
   
   } from '../../assets'
 
-const TabItemCS = ({isFocused, onLongPress, onPress, label}) => {
+const TabItem = ({isFocused, onLongPress, onPress, label}) => {
     const Icon = () => {
         if(label === "Home") {
             return isFocused ? <HomeActiveIcon/> : <HomeIcon/>
@@ -45,7 +45,7 @@ const TabItemCS = ({isFocused, onLongPress, onPress, label}) => {
   )
 }
 
-export default TabItemCS
+export default TabItem
 
 const styles = StyleSheet.create({
     container: { 

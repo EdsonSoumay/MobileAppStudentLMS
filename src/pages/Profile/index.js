@@ -3,8 +3,9 @@ import React,{useState} from 'react'
 import {launchImageLibrary} from 'react-native-image-picker';
 import { Gap } from '../../components';
 import { ArrowLeftBlack } from '../../assets';
+import { ScrollView } from 'react-native-gesture-handler';
 
-const Profile = () => {
+const Profile = (props) => {
 
     const [photo, setPhoto] = useState('');
     const [hasPhoto, setHasPhoto] = useState(false);
@@ -27,7 +28,7 @@ const Profile = () => {
   return (
     <View style={{ backgroundColor:'#EEF1F7', flex: 1}}>
     <View style={styles.header}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=>props.navigation.goBack()}>
             <ArrowLeftBlack/>
         </TouchableOpacity>
          <View style={styles.containerImage}>
@@ -52,7 +53,7 @@ const Profile = () => {
             </View>
         </View>
     </View>
-    <View style={styles.body}>
+    <ScrollView style={styles.body}>
         <Gap height={25}/>
             <View style={{width:200}}>
                 <Text style={{fontFamily:'OpenSans-Bold', fontSize: 26, color:'#000000'}}>Joshua Doe</Text>
@@ -91,7 +92,7 @@ const Profile = () => {
                 </View>  
                 <Gap height={15}/>              
             </View>
-    </View>
+    </ScrollView>
        
     </View>                  
   )

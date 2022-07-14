@@ -3,11 +3,13 @@ import React from 'react'
 import {AboutBlackIcon, AboutIcon, ArchiveIcon, ArrowLeftBlack, BellIcon, DarkModeIcon, HelpIcon, LogOutIcon, RightIcon, WorldIcon} from '../../assets'
 import {Gap} from '../../components'
 
-const Setting = () => {
+const Setting = (props) => {
   return (
     <>
       <View style={styles.header}>
-        <ArrowLeftBlack/>
+          <TouchableOpacity onPress={()=>props.navigation.goBack()}>
+              <ArrowLeftBlack/>
+          </TouchableOpacity>
         <Gap width={32.5}/>
         <Text style={{fontFamily:'OpenSans-Bold', color:'#000000', fontSize:17}}>Settings</Text>
       </View>

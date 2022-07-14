@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, StyleSheet} from 'react-native';
-import TabItemCS from './TabItem';
+import TabItem from './TabItem';
 // import { colors } from '../../../utils/colors';
 // import { connect } from 'react-redux';
 // import { deleteParameterFilter } from '../../../actions/ProdukAction';
@@ -47,7 +47,7 @@ const BottomNavigatorCustomize = ({ state, descriptors, navigation, dispatch }) 
         };
 
         return (
-         <TabItemCS
+         <TabItem
          key={index}
          label={label}
          isFocused={isFocused}
