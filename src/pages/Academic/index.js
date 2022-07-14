@@ -41,7 +41,7 @@ const AboutPopUp = ({visible, children}) => {
 
 
 
-const Academic = () => {
+const Academic = (props) => {
 
     const [AboutVisible, setAboutVisible] = React.useState(false);
 
@@ -63,19 +63,19 @@ const Academic = () => {
                 <View>
                     <Text style={[ styles.text, {fontFamily:'Poppins-SemiBold', color:'#FFFFFF'}]}>Jhon Doe</Text>
                 </View>
-                <View style={{flexDirection:'row', justifyContent:'flex-end'}}>
+                <TouchableOpacity onPress={()=>props.navigation.navigate('AcademicMember')} style={{flexDirection:'row', justifyContent:'flex-end'}}>
                 <View style={{justifyContent:"space-between",width:200, flexDirection:'row'}}>
                         <View style={{flexDirection:'row'}}>
-                        <View style={{zIndex:1,height: 46, width:46, borderRadius: 46, backgroundColor:'#356CB1', justifyContent:'center',alignItems:'center', top:-3}}>
-                            <Image
-                            source={Images2}
-                                style={[styles.tinyLogo]}
-                            />
-                        </View>
-                        <Image
-                        source={Images1}
-                            style={[styles.tinyLogo, {right:25}]}
-                        />
+                          <View style={{zIndex:1,height: 46, width:46, borderRadius: 46, backgroundColor:'#356CB1', justifyContent:'center',alignItems:'center', top:-3}}>
+                              <Image
+                              source={Images2}
+                                  style={[styles.tinyLogo]}
+                              />
+                          </View>
+                          <Image
+                          source={Images1}
+                              style={[styles.tinyLogo, {right:25}]}
+                          />
                         </View>
                         <View style={{flexDirection:'column', justifyContent:'center', alignItems:'center'}}>
                             <View>
@@ -87,7 +87,7 @@ const Academic = () => {
                             </View>
                         </View>
                     </View>
-                </View>
+                </TouchableOpacity>
         </View>
         <Gap height={15}/>
         <View style={styles.textInput}>

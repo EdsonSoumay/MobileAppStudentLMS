@@ -4,13 +4,13 @@ import { ArrowLeft, ChatIcon, Images1, Images2 } from '../../assets'
 import { Gap } from '../../components'
 import AcademicMemberList from '../../assets/json/AcademicMember.json'
 
-const AcademicMember = () => {
+const AcademicMember = (props) => {
   return (
    <>
     <View style={styles.header}>
-       <View>
-         <ArrowLeft/>
-       </View>
+             <TouchableOpacity onPress={()=>props.navigation.goBack()}>
+                <ArrowLeft />
+            </TouchableOpacity>
        <Gap width={24.5}/>
        <View>
        <Text style={{fontFamily:'OpenSans-SemiBold', fontSize:20, color:'#FFFFFF'}}>People</Text>
@@ -45,7 +45,7 @@ const AcademicMember = () => {
                             </View>
                         </View>
                         </View>
-                        <TouchableOpacity style={{justifyContent:'center'}}>
+                        <TouchableOpacity onPress={()=>props.navigation.navigate('AcademicChat')} style={{justifyContent:'center'}}>
                             <ChatIcon/>
                         </TouchableOpacity>
                     </View>

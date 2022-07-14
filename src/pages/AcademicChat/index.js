@@ -4,7 +4,7 @@ import { ArrowLeft, AttachmentIcon, Images2, SendMessageIcon } from '../../asset
 import { Gap } from '../../components'
 import AcademicChatdata from '../../assets/json/AcademicChat.json'
 
-const AcademicChat = () => {
+const AcademicChat = (props) => {
 
   // const [StyleOnBodyChat, setStyleOnBodyChat] = useState('flex-end')
 
@@ -13,9 +13,9 @@ const AcademicChat = () => {
     <View style={{backgroundColor:'#356CB1', flex:1}}>
         {/* <Text>header</Text> */}
         <View style={styles.header}>
-            <View>
+            <TouchableOpacity onPress={()=>props.navigation.goBack()}>
                 <ArrowLeft />
-            </View>
+            </TouchableOpacity>
             <Gap width={23.5}/>
             <View>
                 <Image

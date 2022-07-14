@@ -4,11 +4,11 @@ import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 
-import { Home, Setting, ForumClass, Profile } from '../../pages';
+import { Home, Setting, ForumClass, Profile, Academic, AcademicMember, AcademicChat } from '../../pages';
 
 const Stack = createStackNavigator();
 
-const StackHome = () => {
+export const StackHome = () => {
   return (
     <Stack.Navigator>
       <Stack.Screen name="Home" component={Home} options={{headerShown: false, title: 'Home'}} />
@@ -19,5 +19,17 @@ const StackHome = () => {
   );
 }
 
-export default StackHome
+export const StackAcademic = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="Academic" component={Academic} options={{headerShown: false, title: 'Academic'}} />
+      <Stack.Screen name="AcademicMember" component={AcademicMember} options={{headerShown: false, title: 'AcademicMember'}} />
+      <Stack.Screen name="AcademicChat" component={AcademicChat} options={{headerShown: false, title: 'AcademicChat'}} />
+    </Stack.Navigator>
+  );
+}
+
+
+
+
 

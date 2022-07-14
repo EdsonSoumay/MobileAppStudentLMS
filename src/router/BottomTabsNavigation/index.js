@@ -6,7 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import BottomNavigatorCustomize from './customize';
 
 import { Home, Academic, News, Discussion } from '../../pages';
-import StackHome from '../StackNavigation';
+import {StackHome, StackAcademic} from '../StackNavigation';
 
 
 // const Tab = createMaterialBottomTabNavigator();
@@ -19,7 +19,7 @@ function BottomTabNavigation() {
     <NavigationContainer>
       <Tab.Navigator tabBar={ props => <BottomNavigatorCustomize {...props} />}>
       <Tab.Screen name="StackHome" component={StackHome} options={{headerShown: false, title: 'Home'}} />
-      <Tab.Screen name="Academic" component={Academic} options={{headerShown: false, title: 'Academic'}} />
+      <Tab.Screen name="StackAcademic" component={StackAcademic} options={{headerShown: false, title: 'Academic'}} />
       <Tab.Screen name="News" component={News} options={{headerShown: false, title: 'News'}} />
       <Tab.Screen name="Discussion" component={Discussion} options={{headerShown: false, title: 'Discussion'}} />
     </Tab.Navigator>
