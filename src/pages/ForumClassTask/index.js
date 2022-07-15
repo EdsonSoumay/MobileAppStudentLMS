@@ -4,7 +4,7 @@ import { ArrowLeftBlack, CalendarBlackIcon, CalendarIcon, ClassTaskIlustration }
 import { Gap } from '../../components'
 import ClassTask from '../../assets/json/ClassTask.json'
 
-const ForumClassTask = () => {
+const ForumClassTask = (props) => {
 
     const [Category, setCategory] = useState('')
     const [ListClassTask, setListClassTask] = useState('')
@@ -117,7 +117,14 @@ const ForumClassTask = () => {
         ListClassTask?
         ListClassTask.map((data, i)=>{
             return(
-                <View style={[styles.card, data.status === 'Done'?{backgroundColor:'#61AF77'}:data.status === 'In Progress'?{backgroundColor:'#FFFFFF', borderWidth: 1, borderColor:'#E8E8E8'}:data.status === 'Missing'?{backgroundColor:'#F9817E'}: null ]} key={i}>
+                <TouchableOpacity style={[styles.card, data.status === 'Done'?{backgroundColor:'#61AF77'}:data.status === 'In Progress'?{backgroundColor:'#FFFFFF', borderWidth: 1, borderColor:'#E8E8E8'}:data.status === 'Missing'?{backgroundColor:'#F9817E'}: null ]} key={i}
+                onPress={ 
+                    data.type == 'ASSIGNMENT' ? ()=>props.navigation.navigate('SubmissionClassTask')
+                    :
+                    data.type == 'QUIZ' ? ()=>props.navigation.navigate('SubmissionClassQuiz')
+                    : null
+                }
+                >
                 <View style={{flexDirection:'column',justifyContent:'space-between'}}>
                     <View>
                         <Text 
@@ -158,7 +165,7 @@ const ForumClassTask = () => {
                                    {color:"#FFFFFF"},
                              ]  ]}>{data.status}</Text>
                 </View>
-            </View> 
+            </TouchableOpacity> 
             )
         }): null
         

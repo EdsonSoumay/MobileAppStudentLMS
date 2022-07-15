@@ -134,10 +134,17 @@ const ForumClass = (props) => {
                             </View>
                         </TouchableOpacity >
                         :
-                        data.type == 'ASSIGMENT'|| 'QUIZ' ?
+                        data.type == 'ASSIGNMENT'|| 'QUIZ' ?
                         <TouchableOpacity 
                         style={styles.content}
                         key={`index:${i}`}
+                        
+                        onPress={ 
+                          data.type == 'ASSIGNMENT' ? ()=>props.navigation.navigate('SubmissionClassTask')
+                          :
+                          data.type == 'QUIZ' ? ()=>props.navigation.navigate('SubmissionClassQuiz')
+                          : null
+                        }
                           >
                             <View style={[styles.bodyContent, {paddingTop:16}]}>
                                 <View style={{ width: 33, height: 33, borderRadius: 33/2, backgroundColor:'#F6F6F6', alignItems:'center', justifyContent:'center'}}>

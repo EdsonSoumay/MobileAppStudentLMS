@@ -2,10 +2,22 @@ import React from 'react'
 
 import { createStackNavigator } from '@react-navigation/stack';
 
-import { Home, Setting, ForumClass, Profile, Academic, AcademicMember, AcademicChat, News, EachNews, Discussion, SplashScreen, Login } from '../../pages';
+import { Home, Setting, ForumClass, Profile, Academic, AcademicMember, AcademicChat, News, EachNews, Discussion, SplashScreen, Login, SubmissionClassQuiz, SubmissionClassTask, StartQuizPage, DisplayQuiz, ScoreQuiz } from '../../pages';
 import {MainBottomTab, MainBottomTab2} from '../BottomTabsNavigation';
 
 const Stack = createStackNavigator();
+
+export const OpeningStack = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="SplashScreen" component={SplashScreen} options={{headerShown: false, title: 'SplashScreen'}} />
+      <Stack.Screen name="Login" component={Login} options={{headerShown: false, title: 'Login'}} />
+      <Stack.Screen name="MainBottomTab" component={MainBottomTab} options={{headerShown: false, title: 'MainBottomTab'}} />
+      <Stack.Screen name="MainBottomTab2" component={MainBottomTab2} options={{headerShown: false, title: 'MainBottomTab2'}} />
+    </Stack.Navigator>
+  );
+}
+
 
 export const StackHome = () => {
   return (
@@ -13,10 +25,10 @@ export const StackHome = () => {
       <Stack.Screen name="Home" component={Home} options={{headerShown: false}} />
       <Stack.Screen name="Setting" component={Setting} options={{headerShown: false}} />
       <Stack.Screen name="Profile" component={Profile} options={{headerShown: false}} />
-      <Stack.Screen name="MainBottomTab2" component={MainBottomTab2} options={{headerShown: false, title: 'MainBottomTab2'}} />
     </Stack.Navigator>
   );
 }
+
 
 export const StackAcademic = () => {
   return (
@@ -46,14 +58,20 @@ export const StackDiscussion = () => {
 }
 
 
-export const OpeningStack = () => {
-    return (
-      <Stack.Navigator>
-        <Stack.Screen name="SplashScreen" component={SplashScreen} options={{headerShown: false, title: 'SplashScreen'}} />
-        <Stack.Screen name="Login" component={Login} options={{headerShown: false, title: 'Login'}} />
-        <Stack.Screen name="MainBottomTab" component={MainBottomTab} options={{headerShown: false, title: 'MainBottomTab'}} />
-      </Stack.Navigator>
-    );
-  }
+export const StackForumClass = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen name="ForumClass" component={ForumClass} options={{headerShown: false, title: 'ForumClass'}} />
+      <Stack.Screen name="SubmissionClassQuiz" component={SubmissionClassQuiz} options={{headerShown: false, title: 'SubmissionClassQuiz'}} />
+      <Stack.Screen name="SubmissionClassTask" component={SubmissionClassTask} options={{headerShown: false, title: 'SubmissionClassTask'}} />
+      <Stack.Screen name="StartQuizPage" component={StartQuizPage} options={{headerShown: false, title: 'StartQuizPage'}} />
+      <Stack.Screen name="DisplayQuiz" component={DisplayQuiz} options={{headerShown: false, title: 'DisplayQuiz'}} />
+      <Stack.Screen name="ScoreQuiz" component={ScoreQuiz} options={{headerShown: false, title: 'ScoreQuiz'}} />
+    </Stack.Navigator>
+  );
+}
+
+
+
 
 

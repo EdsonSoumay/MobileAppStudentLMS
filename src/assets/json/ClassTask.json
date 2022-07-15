@@ -4,43 +4,57 @@
             "id" : 1,
             "title" : "Quiz 1",
             "dueDate" : "Due Date 17 feb, 09.30",
-            "status" : "Done"
+            "status" : "Done",
+            "type" : "QUIZ"
         },
         {
             "id" : 2,
             "title" : "Assignment 1",
             "dueDate" : "Due Date 17 feb, 10.30",
-            "status" : "Done"
+            "status" : "Done",
+            "type" : "ASSIGNMENT"
         },
         {
             "id" : 3,
             "title" : "Quiz 2",
             "dueDate" : "Due Date 17 feb, 11.30",
-            "status" : "In Progress"
+            "status" : "In Progress",
+            "type" : "QUIZ"
         },
         {
             "id" : 4,
             "title" : "Assignment 2",
             "dueDate" : "Due Date 17 feb, 08.30",
-            "status" : "Missing"
+            "status" : "Missing",
+            "type" : "ASSIGNMENT"
         },
         {
             "id" : 5,
             "title" : "Assignment 3",
             "dueDate" : "Due Date 17 feb, 08.30",
-            "status" : "Missing"
+            "status" : "Missing",
+            "type" : "ASSIGNMENT"
         },
         {
             "id" : 6,
             "title" : "Quiz 3",
             "dueDate" : "Due Date 17 feb, 08.30",
-            "status" : "Missing"
+            "status" : "Missing",
+            "type" : "QUIZ"
         },
         {
-            "id" : 6,
+            "id" : 7,
             "title" : "Quiz 4",
             "dueDate" : "Due Date 17 feb, 08.30",
-            "status" : "In Progress"
+            "status" : "In Progress",
+            "type" : "QUIZ"
+        },
+        {
+            "id" : 8,
+            "title" : "Quiz 5",
+            "dueDate" : "Due Date 17 feb, 08.30",
+            "status" : "Done",
+            "type" : "QUIZ"
         }
     ]
 }
