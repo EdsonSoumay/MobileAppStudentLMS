@@ -74,8 +74,6 @@ const Notification = ({visible, children}) => {
     );
   };
 
-
-
 const Home = (props) => {
     const path = '../../assets/ilustrations/class2-ilustration.png'
     const [visible, setVisible] = React.useState(false);
@@ -143,7 +141,7 @@ const Home = (props) => {
                     return(
                     <TouchableOpacity style={[styles.classCard, {backgroundColor:data.color}]} 
                         key={`index:${i}`}
-                        onPress={()=>props.navigation.navigate('MainBottomTab2')}
+                        onPress={()=>props.navigation.navigate('BottomClass')}
                         >
                         <View style={{flexDirection:'row', justifyContent:'space-around'}}>
 

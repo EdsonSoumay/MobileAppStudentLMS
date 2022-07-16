@@ -4,12 +4,12 @@ import { ArrowLeftBlack, ChatIcon, Images1, Images2, Class1Ilustration, PeopleIl
 import { Gap } from '../../components'
 import AcademicMemberList from '../../assets/json/AcademicMember.json'
 
-const ForumClassPeople = () => {
+const ForumClassPeople = (props) => {
   return (
    <>
-           <View style={{marginHorizontal: 16, marginTop: 10}}> 
+        <TouchableOpacity onPress={()=>props.navigation.navigate('MainBottomTab')} style={{marginHorizontal: 16, marginTop: 10}}> 
             <ArrowLeftBlack/>
-        </View>
+        </TouchableOpacity >
         <View style={styles.header}>
             <View>
                 <PeopleIlustration height={98}/>

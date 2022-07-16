@@ -3,11 +3,13 @@ import React from 'react'
 import { ArrowLeftBlack, AttachmentIcon, Images2, TimeBlackIcon, TimeIcon } from '../../assets';
 import { Gap } from '../../components';
 
-const SubmissionClassTask = () => {
+const SubmissionClassTask = (props) => {
   return (
     <>
       <View style={styles.header}>
-        <ArrowLeftBlack/>
+        <TouchableOpacity onPress={()=>props.navigation.goBack()}>
+                <ArrowLeftBlack/>
+        </TouchableOpacity>
         <Gap width={'20%'}/>
         <Text style={{fontFamily:'OpenSans-Bold', fontSize: 20, color:'#000000'}}>Assigment Details</Text>
       </View>

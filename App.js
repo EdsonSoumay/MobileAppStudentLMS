@@ -21,13 +21,13 @@ import ScoreQuiz from './src/pages/ScoreQuiz'
 import Profile from './src/pages/Profile'
 import Setting from './src/pages/Setting'
 import MainBottomTab from './src/router/BottomTabsNavigation'
-import { OpeningStack } from './src/router/StackNavigation'
+import { StackSingle } from './src/router/StackNavigation'
 import { NavigationContainer } from '@react-navigation/native'
 
 const App = () => {
   return (
    <NavigationContainer>
-      <OpeningStack/>
+      <StackSingle/>
    </NavigationContainer>
   )
 }

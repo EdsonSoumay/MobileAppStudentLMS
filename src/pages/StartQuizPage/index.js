@@ -3,12 +3,14 @@ import React from 'react'
 import { ArrowLeftBlack, QuizStartIlustration } from '../../assets'
 import { Gap } from '../../components'
 
-const StartQuizPage = () => {
+const StartQuizPage = (props) => {
   return (
     <>
         <Gap height={20}/>
         <View style={styles.header}>
-            <ArrowLeftBlack/>
+            <TouchableOpacity onPress={()=>props.navigation.goBack()}>
+                    <ArrowLeftBlack/>
+            </TouchableOpacity>
             <Gap width={'20%'}/>
             <Text style={{fontFamily:'OpenSans-SemiBold', fontSize:20, color:'#000000'}}>Organization Behavior</Text>
         </View>
@@ -32,7 +34,7 @@ const StartQuizPage = () => {
                 </View>
             </View>
             <Gap height={30}/>
-            <TouchableOpacity style={styles.buttonStart}>
+            <TouchableOpacity style={styles.buttonStart} onPress={()=>props.navigation.navigate('DisplayQuiz')}>
                 <Text style={{fontFamily:'OpenSans-Bold', fontSize:17, color:'#FFFFFF'}}>Start Quiz</Text>
             </TouchableOpacity>
         </View>

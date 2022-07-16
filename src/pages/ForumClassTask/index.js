@@ -60,9 +60,9 @@ const ForumClassTask = (props) => {
 
   return (
     <>
-        <View style={{marginHorizontal: 16, marginTop: 10}}> 
+        <TouchableOpacity onPress={()=>props.navigation.navigate('MainBottomTab')} style={{marginHorizontal: 16, marginTop: 10}}> 
             <ArrowLeftBlack/>
-        </View>
+        </TouchableOpacity>
         <View style={styles.header}>
             <View>
                 <ClassTaskIlustration height={98}/>

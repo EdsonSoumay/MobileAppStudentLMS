@@ -3,11 +3,13 @@ import React from 'react'
 import { ArrowLeftBlack, AttachmentIcon, Images2, TimeBlackIcon, TimeIcon } from '../../assets';
 import { Gap } from '../../components';
 
-const SubmissionClassQuiz = () => {
+const SubmissionClassQuiz = (props) => {
   return (
     <>
       <View style={styles.header}>
-        <ArrowLeftBlack/>
+        <TouchableOpacity onPress={()=>props.navigation.navigate('BottomClass')}>
+            <ArrowLeftBlack/>
+        </TouchableOpacity>
         <Gap width={'30%'}/>
         <Text style={{fontFamily:'OpenSans-Bold', fontSize: 20, color:'#000000'}}>Quiz Details</Text>
       </View>
@@ -52,7 +54,7 @@ const SubmissionClassQuiz = () => {
         </View>
         <Gap height={26}/>
         <View style={styles.contentBody}>
-                <TouchableOpacity style={styles.submitButton}>
+                <TouchableOpacity onPress={()=>props.navigation.navigate('StartQuizPage')} style={styles.submitButton}>
                     <Text style={{fontFamily:'Poppins-SemiBold', fontSize: 14, color:'#FFFFFF', padding:4}}> Start Quiz</Text>                   
                 </TouchableOpacity>
         </View>

@@ -3,7 +3,7 @@ import React from 'react'
 import { QuizSuccesIlustration } from '../../assets'
 import { Gap } from '../../components'
 
-const ScoreQuiz = () => {
+const ScoreQuiz = (props) => {
   return (
     <>
       <Gap height={20}/>
@@ -24,7 +24,7 @@ const ScoreQuiz = () => {
         </View>
       </View>
       <Gap height={50}/>
-      <TouchableOpacity style={styles.buttonStart}>
+      <TouchableOpacity style={styles.buttonStart} onPress={()=>props.navigation.navigate('SubmissionClassQuiz')}>
                 <Text style={{fontFamily:'OpenSans-Bold', fontSize:17, color:'#FFFFFF'}}>Done</Text>
             </TouchableOpacity>
     </>

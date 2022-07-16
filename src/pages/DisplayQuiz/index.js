@@ -2,7 +2,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { Gap } from '../../components'
 
-const DisplayQuiz = () => {
+const DisplayQuiz = (props) => {
   let sum = [1,2,3,4]
 
   return (
@@ -20,9 +20,9 @@ const DisplayQuiz = () => {
         </View>
         <Gap height={32}/>
         {
-          sum.map((data)=>{
+          sum.map((data, i)=>{
             return(
-              <TouchableOpacity style={styles.option}> 
+              <TouchableOpacity style={styles.option} key={i}> 
               <View style={{flexDirection:'row'}}>
                   <View style={styles.circle}/>
                   <Gap width={38}/>
@@ -34,7 +34,7 @@ const DisplayQuiz = () => {
         } 
       </View>
       <Gap height={13}/>
-      <TouchableOpacity style={styles.buttonStart}>
+      <TouchableOpacity onPress={()=>props.navigation.navigate('ScoreQuiz')} style={styles.buttonStart}>
                 <Text style={{fontFamily:'OpenSans-Bold', fontSize:17, color:'#FFFFFF'}}>Finish</Text>
             </TouchableOpacity>
     </>
