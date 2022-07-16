@@ -1,11 +1,11 @@
 import React from 'react';
 import { View, StyleSheet} from 'react-native';
-import TabItem from './TabItem';
+import { MainBottomTabItem } from '../..';
 // import { colors } from '../../../utils/colors';
 // import { connect } from 'react-redux';
 // import { deleteParameterFilter } from '../../../actions/ProdukAction';
 
-const BottomNavigatorCustomize = ({ state, descriptors, navigation, dispatch }) => {
+const MainBottomTabCustomize = ({ state, descriptors, navigation, dispatch }) => {
 
   // console.log("screen option:",props)
 
@@ -47,7 +47,7 @@ const BottomNavigatorCustomize = ({ state, descriptors, navigation, dispatch }) 
         };
 
         return (
-         <TabItem
+         <MainBottomTabItem
          key={index}
          label={label}
          isFocused={isFocused}
@@ -60,7 +60,7 @@ const BottomNavigatorCustomize = ({ state, descriptors, navigation, dispatch }) 
 }
 
 // export default connect()(BottomNavigatorCS)
-export default BottomNavigatorCustomize
+export default MainBottomTabCustomize
 
 const styles = StyleSheet.create({
   container: {

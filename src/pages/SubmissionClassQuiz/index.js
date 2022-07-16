@@ -7,7 +7,7 @@ const SubmissionClassQuiz = (props) => {
   return (
     <>
       <View style={styles.header}>
-        <TouchableOpacity onPress={()=>props.navigation.navigate('BottomClass')}>
+        <TouchableOpacity onPress={()=>props.navigation.navigate('ClassBottomTab')}>
             <ArrowLeftBlack/>
         </TouchableOpacity>
         <Gap width={'30%'}/>

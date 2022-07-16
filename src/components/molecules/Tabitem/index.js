@@ -3,6 +3,7 @@ import React from 'react'
 // import { colors } from '../../../utils/colors'
 
 import {
+    // icon main bottom tab
    HomeIcon,
    HomeActiveIcon,
    AcademicIcon,
@@ -10,11 +11,19 @@ import {
    NewsIcon,
    NewsActiveIcon,
    DiscussionIcon,
-   DiscussionActiveIcon
-  
-  } from '../../assets'
+   DiscussionActiveIcon,
 
-const TabItem = ({isFocused, onLongPress, onPress, label}) => {
+  // icon class bottom tab
+   ForumIcon,
+   ForumActiveIcon,
+   ClassTaskIcon,
+   ClassTaskActiveIcon,
+   PeopleIcon,
+   PeopleActiveIcon
+  
+  } from '../../../assets'
+
+export const MainBottomTabItem = ({isFocused, onLongPress, onPress, label}) => {
     const Icon = () => {
         if(label === "Home") {
             return isFocused ? <HomeActiveIcon/> : <HomeIcon/>
@@ -45,7 +54,34 @@ const TabItem = ({isFocused, onLongPress, onPress, label}) => {
   )
 }
 
-export default TabItem
+
+
+export const ClassBottomTabItem = ({isFocused, onLongPress, onPress, label}) => {
+  const Icon2 = () => {
+      if(label === "Forum") {
+          return isFocused ? <ForumActiveIcon/> : <ForumIcon/>
+      }
+
+      if(label === "Class Task") {
+        return isFocused ? <ClassTaskActiveIcon/> : <ClassTaskIcon/>
+    }
+
+      if(label === "People") {
+          return isFocused ? <PeopleActiveIcon/> : <PeopleIcon/>
+      }
+
+      return <ForumActiveIcon/>
+  }
+return (
+  <TouchableOpacity
+    onPress={onPress}
+    onLongPress={onLongPress}
+    style={styles.container}>
+      <Icon2/>
+    <Text style={styles.text(isFocused)}>{label}</Text>
+  </TouchableOpacity>
+)
+}
 
 const styles = StyleSheet.create({
     container: { 

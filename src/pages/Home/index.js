@@ -141,7 +141,7 @@ const Home = (props) => {
                     return(
                     <TouchableOpacity style={[styles.classCard, {backgroundColor:data.color}]} 
                         key={`index:${i}`}
-                        onPress={()=>props.navigation.navigate('BottomClass')}
+                        onPress={()=>props.navigation.navigate('ClassBottomTab')}
                         >
                         <View style={{flexDirection:'row', justifyContent:'space-around'}}>
 

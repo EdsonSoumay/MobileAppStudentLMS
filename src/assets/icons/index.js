@@ -12,6 +12,7 @@ import CalendarBlackIcon from './calendarBLack-icon.svg'
 import CamIcon from './cam-icon.svg'
 import ChatIcon from './chat-icon.svg'
 import ClassTaskIcon from './classTask-icon.svg'
+import ClassTaskActiveIcon from './classTaskActive-icon.svg'
 import CloseIcon from './close-icon.svg'
 import CommentIcon from './comment-icon.svg'
 import DarkModeIcon from './darkMode-icon.svg'
@@ -19,6 +20,7 @@ import DiscussionIcon from './discussion-icon.svg'
 import DiscussionActiveIcon from './discussionActive-icon.svg'
 import DocIcon from './doc-icon.svg'
 import ForumIcon from './forum-icon.svg'
+import ForumActiveIcon from './forumActive-icon.svg'
 import GoogleDriveIcon from './googleDrive-icon.svg'
 import HelpIcon from './help-icon.svg'
 import HomeIcon from './home-icon.svg'
@@ -33,6 +35,7 @@ import NewsActiveIcon from './newsActive-icon.svg'
 import OneDriveIcon from './oneDrive-icon.svg'
 import PenIcon from './pen-icon.svg'
 import PeopleIcon from './people-icon.svg'
+import PeopleActiveIcon from './peopleActive-icon.svg'
 import RightIcon from './right-icon.svg'
 import SendMessageIcon from './sendMessage-icon.svg'
 import SettingIcon from './setting-icon.svg'
@@ -59,6 +62,7 @@ export {
     CamIcon,
     ChatIcon,
     ClassTaskIcon,
+    ClassTaskActiveIcon,
     CloseIcon,
     CommentIcon,
     DarkModeIcon,
@@ -66,6 +70,7 @@ export {
     DiscussionActiveIcon,
     DocIcon,
     ForumIcon,
+    ForumActiveIcon,
     GoogleDriveIcon,
     HelpIcon,
     HomeIcon,
@@ -80,6 +85,7 @@ export {
     OneDriveIcon,
     PenIcon,
     PeopleIcon,
+    PeopleActiveIcon,
     RightIcon,
     SendMessageIcon,
     SettingIcon,

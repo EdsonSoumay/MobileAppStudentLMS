@@ -92,7 +92,6 @@ const ForumClass = (props) => {
         <ScrollView style={{marginHorizontal:16}}>
         {
             ClassContent.ClassContent.map((data, i)=>{
-                        console.log("data:",data)
                 return(
                     data.type == 'Regular'?
                     <TouchableOpacity 

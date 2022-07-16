@@ -1,7 +1,7 @@
 import React from 'react'
 import { createStackNavigator } from '@react-navigation/stack';
 import { Home, Setting, ForumClass, Profile, Academic, AcademicMember, AcademicChat, News, EachNews, Discussion, SplashScreen, Login, SubmissionClassQuiz, SubmissionClassTask, StartQuizPage, DisplayQuiz, ScoreQuiz } from '../../pages';
-import {MainBottomTab, BottomClass} from '../BottomTabsNavigation';
+import {MainBottomTab, ClassBottomTab} from '../BottomTabsNavigation';
 
 const Stack = createStackNavigator();
 
@@ -11,7 +11,7 @@ export const StackSingle = () => {
       <Stack.Screen name="SplashScreen" component={SplashScreen} options={{headerShown: false, title: 'SplashScreen'}} />
       <Stack.Screen name="Login" component={Login} options={{headerShown: false, title: 'Login'}} />
       <Stack.Screen name="MainBottomTab" component={MainBottomTab} options={{headerShown: false, title: 'MainBottomTab'}} />
-      <Stack.Screen name="BottomClass" component={BottomClass} options={{headerShown: false, title: 'BottomClass'}} />
+      <Stack.Screen name="ClassBottomTab" component={ClassBottomTab} options={{headerShown: false, title: 'ClassBottomTab'}} />
 
       {/* StackNews yang tidak pake bottom tab*/}
       <Stack.Screen name="EachNews" component={EachNews} options={{headerShown: false, title: 'EachNews'}} />
